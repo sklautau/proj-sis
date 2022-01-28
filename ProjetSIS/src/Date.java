@@ -58,6 +58,9 @@ public class Date {
         if (minute<0){
             System.out.println("Erreur de données : \n minute < 0");
         }
+        if(annee<1900){
+            System.out.println("Erreur dedonnées : \n année < 1900");
+        }
         this.annee = annee;
         this.mois = mois;
         this.jour = jour;
@@ -97,6 +100,9 @@ public class Date {
                 System.out.println("Erreur de données : \n jour > 30");
             }
         }
+        if(annee<1900){
+            System.out.println("Erreur dedonnées : \n année < 1900");
+        }
         this.annee = annee;
         this.mois = mois;
         this.jour = jour;
@@ -110,6 +116,9 @@ public class Date {
         }
         else if (mois<0){
             System.out.println("Erreur de données : \n mois < 0");
+        }
+        if(annee<1900){
+            System.out.println("Erreur dedonnées : \n année < 1900");
         }
         this.annee = annee;
         this.mois = mois;
