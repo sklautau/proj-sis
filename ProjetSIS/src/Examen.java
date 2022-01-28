@@ -7,6 +7,7 @@
  *
  * @author Pauline KIEFER
  * @author Arthur VASSON
+ * @HELLO WORLD
  */
 public class Examen {
     private Date date;
