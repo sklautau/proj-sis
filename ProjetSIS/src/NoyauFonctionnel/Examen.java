@@ -14,12 +14,12 @@ package NoyauFonctionnel;
 public class Examen {
     private Date date;
     private String nomDocteur;
-    private String typeExamen;
+    private TypeImagerie typeExamen;
     private String compteRendu;
     private int PACScode;
     private boolean dmrpapier;
     
-    public Examen(Date date, String nomDocteur, String typeExamen, String compteRendu, int PACScode){
+    public Examen(Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
         this.date=date;
         this.nomDocteur=nomDocteur;
         this.typeExamen=typeExamen;
@@ -28,7 +28,7 @@ public class Examen {
         dmrpapier=false;
     }
     
-    public Examen(Date date, String nomDocteur, String typeExamen, String compteRendu){
+    public Examen(Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu){
         this.date=date;
         this.nomDocteur=nomDocteur;
         this.typeExamen=typeExamen;
@@ -44,7 +44,7 @@ public class Examen {
         return nomDocteur;
     }
     
-    public String getTypeExamen(){
+    public TypeImagerie getTypeExamen(){
         return typeExamen;
     }
     
