@@ -12,7 +12,7 @@ import NoyauFonctionnel.Medecin;
  *
  * @author Pauline KIEFER
  */
-public class Connexion_Interface extends javax.swing.JPanel {
+public class Connexion_Interface extends javax.swing.JFrame {
 
     /**
      * Creates new form Connexion
@@ -97,11 +97,7 @@ public class Connexion_Interface extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int id1;
-        id1=Medecin.getId();
-        String motDePasse;
-        motDePasse=Medecin.getMdp();
-      if (login.equals(id1) && motDePasse .equals(motDePasse )) {
+        if (login.equals(id1) && motDePasse .equals(motDePasse )) {
                 System.out.println("message");
                 Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre MenuMedic (valider)
 
@@ -116,7 +112,7 @@ public class Connexion_Interface extends javax.swing.JPanel {
                 dispose();
             }
             else {
-                System.out.println("ERREUR : mauvais login ou mot de passe.");
+                System.out.println("ERREUR : mauvais identifiant ou mot de passe.");
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -131,6 +127,14 @@ public class Connexion_Interface extends javax.swing.JPanel {
 
     private String login;
     private String mdp;
+    private int id1;
+    private String motDePasse;
+    
+    //ATTENTION IL FAUT INITIALISER id1 et motDePasse avec les termes de l'instance concernée de Medecin
+    /*public void initIdEtMdp(){
+        id1=Medecin.id;
+        motDePasse=Medecin.mdp;
+    }*/
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
         login = jTextField1.getText();

@@ -8,7 +8,7 @@ package Interface;
  *
  * @author Pauline KIEFER
  */
-public class Affiche_Patients extends javax.swing.JPanel {
+public class Affiche_Patients extends javax.swing.JFrame {
 
     /**
      * Creates new form Affiche_Patients
