@@ -98,8 +98,8 @@ public class Connexion_Interface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (login.equals(id1) && motDePasse .equals(motDePasse )) {
-                System.out.println("message");
-                Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre MenuMedic (valider)
+                System.out.println("message"); //pour les tests à enlever après
+                Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
