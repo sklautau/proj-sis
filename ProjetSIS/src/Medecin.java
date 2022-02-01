@@ -74,4 +74,14 @@ public class Medecin {
         s+=specialite+"\n";
         return s;
     }
+    
+    public boolean equals(Object o) {   //Permet de vérifier s'il s'agit bien du même médecin (même les homonymes peuvent être différenciés grâce à la spécialité)
+        if (o instanceof Medecin) {
+            Medecin p = (Medecin)o;
+            return nom.equals(p.nom) && prenom.equals(p.prenom) && specialite.equals(p.specialite);
+            }
+        else
+            return false;
+        } 
+    
 }
