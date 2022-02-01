@@ -8,7 +8,7 @@ package Interface;
  *
  * @author Pauline KIEFER
  */
-public class DMR extends javax.swing.JPanel {
+public class DMR extends javax.swing.JFrame {
 
     /**
      * Creates new form DMR
