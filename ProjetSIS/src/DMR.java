@@ -9,6 +9,10 @@
  *
  * @author Pauline KIEFER
  */
+import NoyauFonctionnel.Examen;
+import NoyauFonctionnel.DICOM;
+import NoyauFonctionnel.Date;
+import NoyauFonctionnel.Genre;
 import java.util.ArrayList;
 
 public class DMR {

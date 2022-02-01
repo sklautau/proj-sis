@@ -4,7 +4,11 @@
  */
 package Interface;
 
-/**
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import NoyauFonctionnel.Medecin;
+
+/*
  *
  * @author Pauline KIEFER
  */
@@ -30,6 +34,7 @@ public class Connexion_Interface extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
 
         jLabel1.setText("Identifiant : ");
 
@@ -43,6 +48,13 @@ public class Connexion_Interface extends javax.swing.JPanel {
         });
 
         jPasswordField1.setText("jPasswordField1");
+
+        jButton1.setText("Connexion");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -58,6 +70,10 @@ public class Connexion_Interface extends javax.swing.JPanel {
                     .addComponent(jTextField1)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
                 .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -70,7 +86,9 @@ public class Connexion_Interface extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -78,14 +96,39 @@ public class Connexion_Interface extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int id1;
+        id1=Medecin.getId();
+        String motDePasse;
+        motDePasse=Medecin.getMdp();
+      if (login.equals(id1) && motDePasse .equals(motDePasse )) {
+                System.out.println("message");
+                Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre MenuMedic (valider)
+
+                //on récupère la taille de l'écran
+                Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+                //on place la fenêtre au milieu
+                appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+                appel.setVisible(true);
+                appel.setLocationRelativeTo(null);
+                dispose();
+            }
+            else {
+                System.out.println("ERREUR : mauvais login ou mot de passe.");
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
-    private String specialite;
+
     private String login;
     private String mdp;
 
