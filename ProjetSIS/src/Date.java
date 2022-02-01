@@ -1,5 +1,4 @@
 
-import NoyauFonctionnel.Date;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -159,23 +158,23 @@ public class Date {
     }
 
     public boolean equal(Date d){
-        return (d.annee==annee && d.mois==mois && d.jour==jour && d.heure==heure && d.minute==minute);
+        return (d.getAnnee()==annee && d.getMois()==mois && d.getJour()==jour && d.getHeure()==heure && d.getMinute()==minute);
     }
     
     public boolean inferieur(Date d){
-        if (annee<d.annee){
+        if (annee<d.getAnnee()){
             return true;
         }
-        else if (mois<d.mois){
+        else if (mois<d.getMois()){
             return true;
         }
-        else if (jour<d.jour){
+        else if (jour<d.getJour()){
             return true;
         }
-        else if (heure<d.heure){
+        else if (heure<d.getHeure()){
             return true;
         }
-        else if (minute<d.minute){
+        else if (minute<d.getMinute()){
             return true;
         }
         else{
