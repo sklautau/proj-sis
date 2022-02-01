@@ -44,6 +44,24 @@ public class Medecin {
         return specialite;
     }
     
+    public boolean verifieId(int id){
+        if (this.id==id){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    public boolean verifieMdp(String mdp){
+        if(this.mdp.equals(mdp)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
     public String toString(){
         String s;
         s="identifiant : ";
