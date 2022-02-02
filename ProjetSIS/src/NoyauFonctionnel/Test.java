@@ -16,12 +16,9 @@ public class Test {
     public static void main(String[] args) {
         // TODO code application logic here
     
-     Date date = new Date(2015,12,31,12,59);
-     Date d = new Date(2015,1,31,12,59);
-     System.out.println(d.equal(d));
-     System.out.println(date.superieur(date));
-     System.out.println(date.superieur(d));
-     System.out.println(d.superieur(date));
-     System.out.println(d.superieur(d));
+     Date date = new Date(2015,12,31);
+     DICOM dic = new DICOM("type", "passif");
+     Patient p = new Patient(dic,"Kiefer","Pauline",date,"18 avenue Pierre Semard 38400 SMH");
+        System.out.println(p.toString());
     } 
 }

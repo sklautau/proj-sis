@@ -25,6 +25,13 @@ public class DICOM {
     public String getPassif(){
         return passif;
     }
+    
+    public String toString(){
+        String s;
+        s="type : "+type+"           ";
+        s+="passif : "+passif;
+        return s;
+    }
 
     public void manipuler(){
 
