@@ -36,6 +36,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jLabel1.setText("Liste des patients : ");
 
@@ -55,23 +56,29 @@ public class Affiche_Patients extends javax.swing.JFrame {
 
         jButton2.setText("Rechercher un patient");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        jButton3.setText("Retour");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(192, 192, 192)
-                        .addComponent(jButton1))
+                        .addComponent(jButton1)
+                        .addGap(0, 9, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(114, 114, 114)))
-                .addGap(21, 21, 21))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +90,9 @@ public class Affiche_Patients extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -117,10 +126,26 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
             appel.setLocationRelativeTo(null);
             dispose();
 }
+
+private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        Connexion_Interface appel;  //pour passer à la fenêtre connexion (bouton retour)
+        appel = new Connexion_Interface();
+
+            //on récupere la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
+}
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
