@@ -44,6 +44,10 @@ public class Patient {
         return adresse;
     }
     
+    public boolean equal(Patient p){
+        return (p.id==id && p.nom==nom && p.prenom==prenom && p.datenais==datenais && p.adresse==adresse);
+    }
+    
     public String toString(){
         String s;
         s="identifiant : ";
