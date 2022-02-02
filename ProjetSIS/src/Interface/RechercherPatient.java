@@ -57,10 +57,10 @@ public class RechercherPatient extends javax.swing.JFrame {
 
         jTextField4.setText("lieuNais");
 
-        jButton1.setText("Recherhcer");
+        jButton1.setText("Rechercher");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
