@@ -131,10 +131,10 @@ public class Connexion_Interface extends javax.swing.JFrame {
     private String motDePasse;
     
     //ATTENTION IL FAUT INITIALISER id1 et motDePasse avec les termes de l'instance concernée de Medecin
-    /*public void initIdEtMdp(){
+    public void initIdEtMdp(){
         id1=Medecin.id;
         motDePasse=Medecin.mdp;
-    }*/
+    }
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
         login = jTextField1.getText();
