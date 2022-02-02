@@ -16,9 +16,12 @@ public class Test {
     public static void main(String[] args) {
         // TODO code application logic here
     
-     Medecin med = new Medecin("Frédéric","Muller","12janvier22","radiologie");
-     Medecin decin = new Medecin("Jeanne","Létoile","124563","radiologie");
-     System.out.println(med.equals(med));
-     System.out.println(med.equals(decin));
+     Date date = new Date(2015,12,31,12,59);
+     Date d = new Date(2015,1,31,12,59);
+     System.out.println(d.equal(d));
+     System.out.println(date.superieur(date));
+     System.out.println(date.superieur(d));
+     System.out.println(d.superieur(date));
+     System.out.println(d.superieur(d));
     } 
 }

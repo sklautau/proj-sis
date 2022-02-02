@@ -181,4 +181,25 @@ public class Date {
             return false;
         }
     }
+    
+    public boolean superieur(Date d){
+        if (annee>d.annee){
+            return true;
+        }
+        else if (mois>d.mois){
+            return true;
+        }
+        else if (jour>d.jour){
+            return true;
+        }
+        else if (heure>d.heure){
+            return true;
+        }
+        else if (minute>d.minute){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
