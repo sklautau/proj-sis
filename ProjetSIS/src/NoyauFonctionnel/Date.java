@@ -202,4 +202,13 @@ public class Date {
             return false;
         }
     }
+    
+    public String toString(){
+        String s="Année : ";
+        s+=annee+"\n";
+        s+="Mois : "+mois+"\n";
+        s+="Jour : "+jour+"\n";
+        s+="Heure : "+heure+"h"+minute+"\n";
+        return s;
+    }
 }

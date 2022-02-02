@@ -32,7 +32,7 @@ public class DMR {
     
     public void afficheListeExam(){
         for(int i=0;i<listeExam.size();i++){
-            System.out.println(listeExam.get(i));
+            System.out.println(listeExam.get(i).toString());
         }
     }
     
@@ -48,8 +48,8 @@ public class DMR {
         return prenomPatient;
     }
     
-    public Date datenais(){
-        return datenais;
+    public String datenais(){
+        return datenais.toString();
     }
     
     public Genre getGenre(){

@@ -36,8 +36,8 @@ public class Examen {
         dmrpapier=true;
     }
     
-    public Date getDate(){
-        return date;
+    public String getDate(){
+        return date.toString();
     }
     
     public String getNomDocteur(){
@@ -69,7 +69,7 @@ public class Examen {
     public String toString(){
         String s;
         s="date de l'examen : ";
-        s+=date+"\n";
+        s+=date.toString()+"\n";
         s+="nom du médecin qui a rélisé l'examen : ";
         s+=nomDocteur+"\n";
         s+="type d'examen : ";
