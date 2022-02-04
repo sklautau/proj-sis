@@ -224,9 +224,9 @@ public class AjouterPatient extends javax.swing.JFrame {
 
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {  
-    DICOM id =new DICOM(jTextField8.getText(),jTextField9.getText());
+    DICOM id = new DICOM(jTextField8.getText(),jTextField9.getText());
     Date date = new Date(Integer.parseInt(jTextField5.getText()),Integer.parseInt(jTextField4.getText()),Integer.parseInt(jTextField3.getText()));
-    Patient p=new Patient(id,jTextField1.getText(),jTextField2.getText(),date,jTextField7.getText());
+    Patient p = new Patient(id,jTextField1.getText(),jTextField2.getText(),date,jTextField7.getText());
         
     Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre DAffiche_Patients (une fois que le nouveau patient est enregistré)
 
