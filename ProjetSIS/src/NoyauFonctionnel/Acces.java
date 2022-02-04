@@ -19,7 +19,7 @@ Statement st = conn.createStatement();
 String update ="";
 String Nom = "Vasson";
 String Prenom = "Arthur";
-Date datenais = Date(2000,02,29);
+Date datenais = new Date(2000,02,29);
 int nb = st.executeUpdate("INSERT INTO personne(Id,Nom,prenom,Datenais,Adresse) VALUES(‘id’, ‘prenom’,'nom','datenais','adresse')");
 ////
 System.out.println("Nombre de lignes insérées = " + nb);
