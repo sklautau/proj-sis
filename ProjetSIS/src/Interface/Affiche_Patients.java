@@ -128,8 +128,8 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
 }
 
 private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
-        Connexion_Interface appel;  //pour passer à la fenêtre connexion (bouton retour)
-        appel = new Connexion_Interface();
+        ConnexionInterface appel;  //pour passer à la fenêtre connexion (bouton retour)
+        appel = new ConnexionInterface();
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
