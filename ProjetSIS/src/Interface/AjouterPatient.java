@@ -241,8 +241,6 @@ public class AjouterPatient extends javax.swing.JFrame {
         String part3 = parts[2];
     Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
     Patient p=new Patient(id,jTextField1.getText(),jTextField2.getText(),date,jTextField7.getText());
-    
-    patient = p.toString();
         
     Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau patient est enregistré)
 
@@ -255,6 +253,7 @@ public class AjouterPatient extends javax.swing.JFrame {
     appel.setVisible(true);
     appel.setLocationRelativeTo(null);
     dispose();
+    getPatientString();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

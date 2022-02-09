@@ -210,6 +210,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
     appel.setVisible(true);
     appel.setLocationRelativeTo(null);
     dispose();
+    getDMRString();
     } 
     
     public String[] getDMRString(){
