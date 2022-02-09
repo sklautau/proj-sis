@@ -30,6 +30,13 @@ public class AjouterPatient extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     String patient;
+    String type;
+    String passif;
+    String date1;
+    String nom;
+    String prenom;
+    String lieuNais;
+    String adress;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -258,8 +265,11 @@ public class AjouterPatient extends javax.swing.JFrame {
     dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    public String getPatient(){
-        return patient;
+    public String[] getPatientString(){
+        String s;
+        s=nom+"_"+prenom+"_"+date1+"_"+lieuNais+"_"+adress+"_"+type+"_"+passif;
+        String[] parties = s.split("_");
+        return parties;
     }
     
     /**
