@@ -56,17 +56,9 @@ public class Create_DMR extends javax.swing.JFrame {
 
         jLabel4.setText("Genre :");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
         jButton1.setText("Créer DMR");
 
         jLabel5.setText("Numéro identifiant :");
-
-        jTextField4.setText("jTextField4");
 
         jLabel6.setText("Nouveau DMR");
 

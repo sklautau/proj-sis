@@ -44,18 +44,11 @@ public class RechercherPatient extends javax.swing.JFrame {
 
         jLabel4.setText("Lieu de naissance : ");
 
-        jTextField1.setText("nom");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-
-        jTextField2.setText("prenom");
-
-        jTextField3.setText("date");
-
-        jTextField4.setText("lieuNais");
 
         jButton1.setText("Rechercher");
 

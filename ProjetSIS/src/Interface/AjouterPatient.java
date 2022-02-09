@@ -69,13 +69,11 @@ public class AjouterPatient extends javax.swing.JFrame {
 
         jLabel6.setText("Lieu de naissance :");
 
-        jTextField1.setText("jTextField1");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jTextField6.setText("jTextField6");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Retour");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +91,6 @@ public class AjouterPatient extends javax.swing.JFrame {
 
         jLabel7.setText("Adresse :");
 
-        jTextField7.setText("jTextField7");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField7ActionPerformed(evt);
@@ -102,7 +99,6 @@ public class AjouterPatient extends javax.swing.JFrame {
 
         jLabel8.setText("Identifiant : ");
 
-        jTextField8.setText("jTextField8");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField8ActionPerformed(evt);
@@ -264,6 +260,10 @@ public class AjouterPatient extends javax.swing.JFrame {
     appel.setLocationRelativeTo(null);
     dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     public String[] getPatientString(){
         String s;

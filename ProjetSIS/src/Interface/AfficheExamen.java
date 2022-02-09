@@ -52,23 +52,17 @@ public class AfficheExamen extends javax.swing.JFrame {
 
         jLabel5.setText("Compte rendu :");
 
-        jTextField1.setText("examen");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("date");
-
-        jTextField3.setText("medecin");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
-
-        jTextField4.setText("typeExam");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
