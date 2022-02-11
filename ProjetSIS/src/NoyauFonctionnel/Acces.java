@@ -9,22 +9,18 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.awt.event.* ;
+import Interface.AjouterPatient;
+
 
 public class Acces {
 
-public static void AjoutPatient(Connection conn) throws SQLException {
+public static void AjoutPatient(Connection conn,Patient P) throws SQLException{
 // Get a statement from the connection
 Statement st = conn.createStatement();
-// A CHANGER JE VEUX POUVOIR LE FAIRE AUTOMATIQUEMENT AVEC LE BOUTON//
-String Nom = "Vasson";//getnom
-String Prenom = "Arthur";//getprenom
-Date Datenais = new Date(2000,02,29);//getdatenais
-String Adresse = "21 rue de Verlande";//getadresse
-String Type = "testType";
-String Passif ="testPassif";
-String id =""+Passif+""+Type;
+
+String id =""+P.getPa+""+Type;
 // ATTENTION DOUBLONS//
-////
 String update ="INSERT INTO personne(Id,Nom,prenom,Datenais,Adresse,Type,Passif) VALUES('"+id+"','"+Nom+"','"+Prenom+"','"+Datenais+"','"+Adresse+"','"+Type+"','"+Passif+"')";
 int nb = st.executeUpdate(update);
 System.out.println("Nombre de lignes insérées = " + nb);//retours du nombre de lignes, secondaire
@@ -60,7 +56,7 @@ conn.close();
 }
 }
 
-public static void AjoutDMR(Connection conn) throws SQLException {
+public static void AjoutDMR(Connection conn) throws SQLException  {
 // Get a statement from the connection
 Statement st = conn.createStatement();
 // A CHANGER JE VEUX POUVOIR LE FAIRE AUTOMATIQUEMENT AVEC LE BOUTON//

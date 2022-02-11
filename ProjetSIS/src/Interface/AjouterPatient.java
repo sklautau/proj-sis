@@ -9,12 +9,13 @@ import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Patient;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 /**
  *
  * @author Pauline KIEFER
  */
-public class AjouterPatient extends javax.swing.JFrame {
+public class AjouterPatient extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form AjouterPatient
@@ -209,7 +210,9 @@ public class AjouterPatient extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+public void AL(String title) {
+    jButton3.addActionListener(this);
+}
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre DAffiche_Patients (retour)
@@ -322,4 +325,9 @@ public class AjouterPatient extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+       
+    }
 }
