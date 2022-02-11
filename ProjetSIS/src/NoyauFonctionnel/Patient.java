@@ -24,8 +24,12 @@ public class Patient {
         this.adresse=adresse;
     }
     
-    public DICOM getId(){
-        return id;
+    public String getPassif(){
+        return id.getPassif();
+    }
+    
+    public String getType(){
+        return id.getType();
     }
     
     public String getNom(){
