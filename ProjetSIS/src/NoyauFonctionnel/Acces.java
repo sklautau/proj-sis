@@ -9,27 +9,29 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import java.sql.PreparedStatement;
 public class Acces {
+private static final String tablepat = "PATIENT";
+public static void AjoutPatient(Patient P) throws SQLException {
 
-public static void AjoutPatient(Connection conn) throws SQLException {
-// Get a statement from the connection
-Statement st = conn.createStatement();
-// A CHANGER JE VEUX POUVOIR LE FAIRE AUTOMATIQUEMENT AVEC LE BOUTON//
-String Nom = "Vasson";//getnom
-String Prenom = "Arthur";//getprenom
-Date Datenais = new Date(2000,02,29);//getdatenais
-String Adresse = "21 rue de Verlande";//getadresse
-String Type = "testType";
-String Passif ="testPassif";
+RequeteType requeteType = new RequeteType();
+String Type = P.getType();
+String Passif =P.getPassif();
 String id =""+Passif+""+Type;
 // ATTENTION DOUBLONS//
-////
-String update ="INSERT INTO personne(Id,Nom,prenom,Datenais,Adresse,Type,Passif) VALUES('"+id+"','"+Nom+"','"+Prenom+"','"+Datenais+"','"+Adresse+"','"+Type+"','"+Passif+"')";
-int nb = st.executeUpdate(update);
-System.out.println("Nombre de lignes insérées = " + nb);//retours du nombre de lignes, secondaire
-st.close();
+
+String update ="Id,Nom,prenom,Datenais,Adresse,Type,Passif";
+PreparedStatement prepstate = requeteType.insert(tablepat, update);
+prepstate.setString(1, id);
+prepstate.setString(2, P.getNom());
+prepstate.setString(3, P.getPrenom());
+prepstate.setString(4, P.getDatenais().toString());
+prepstate.setString(5, P.getAdresse());
+requeteType.close();
 }
+
+
+
 public static void LecturePatient(Connection conn) throws SQLException {
 try {
 // create new statement
