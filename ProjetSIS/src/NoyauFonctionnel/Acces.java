@@ -11,7 +11,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 public class Acces {
+    
 private static final String tablepat = "PATIENT";
+
 public static void AjoutPatient(Patient P) throws SQLException {
 
 RequeteType requeteType = new RequeteType();
@@ -21,12 +23,13 @@ String id =""+Passif+""+Type;
 // ATTENTION DOUBLONS//
 
 String update ="Id,Nom,prenom,Datenais,Adresse,Type,Passif";
-PreparedStatement prepstate = requeteType.insert(tablepat, update);
-prepstate.setString(1, id);
-prepstate.setString(2, P.getNom());
-prepstate.setString(3, P.getPrenom());
-prepstate.setString(4, P.getDatenais().toString());
-prepstate.setString(5, P.getAdresse());
+PreparedStatement prepupdate = requeteType.insert(tablepat, update);
+prepupdate.setString(1, id);
+prepupdate.setString(2, P.getNom());
+prepupdate.setString(3, P.getPrenom());
+prepupdate.setString(4, P.getDatenais().toString());
+prepupdate.setString(5, P.getAdresse());
+prepupdate.executeUpdate();
 requeteType.close();
 }
 
@@ -62,19 +65,18 @@ conn.close();
 }
 }
 
-public static void AjoutDMR(Connection conn) throws SQLException {
-// Get a statement from the connection
-Statement st = conn.createStatement();
-// A CHANGER JE VEUX POUVOIR LE FAIRE AUTOMATIQUEMENT AVEC LE BOUTON//
-Date date = new Date(2000,02,29);//getdate
-String PH = "Arthur";//getprenom
-String type = "Cardiologie";//getdatenais
-String PACS = "UID";//getadresse
-////
-String update ="INSERT INTO DMR(date,PH,type,PACS) VALUES('"+date+"','"+PH+"','"+type+"','"+PACS+"',')";
-int nb = st.executeUpdate(update);
-System.out.println("Nombre de lignes insérées = " + nb);//retours du nombre de lignes, secondaire
-st.close();
+public static void AjoutDMR(DMR dmr) throws SQLException {
+RequeteType requeteType = new RequeteType();
+
+String update ="date,PH,type,PACS";
+PreparedStatement prepupdate = requeteType.insert(tablepat, update);
+prepupdate.setString(1, dmr.getIdPatient().toString());
+prepupdate.setString(2, dmr.getNomPatient());
+prepupdate.setString(3, dmr.getPrenomPatient());
+prepupdate.setString(4, dmr.getDatenais().toString());
+prepupdate.setString(5, dmr.getGenre().toString());
+prepupdate.executeUpdate();
+requeteType.close();
 }
 public static void LectureDMR(Connection conn) throws SQLException {
 try {

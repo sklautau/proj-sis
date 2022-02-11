@@ -29,7 +29,7 @@ public class Dossier {
     public String patientToString(){
         String s;
         s="identifiant : ";
-        s+=patient.getId()+"\n";
+        s+=patient.getPassif()+""+patient.getType()+"\n";
         s+="nom : ";
         s+=patient.getNom()+"\n";
         s+="prénom : ";

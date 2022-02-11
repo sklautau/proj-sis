@@ -48,8 +48,8 @@ public class DMR {
         return prenomPatient;
     }
     
-    public String datenais(){
-        return datenais.toString();
+    public Date getDatenais(){
+        return datenais;
     }
     
     public Genre getGenre(){

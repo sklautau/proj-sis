@@ -15,7 +15,7 @@ public class RequeteType {
     private String url;
     private String user;
     private String password;
-    private Connection conn;
+    private Connection conn = null;
     private PreparedStatement prepstate = null;
     public RequeteType() throws SQLException {
         this("jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima", "vassona", "");
@@ -34,6 +34,8 @@ public class RequeteType {
             // Print information about SQL exceptions
             SQLWarningsExceptions.printExceptions(se);
             return;
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
         }
     return;
 }
@@ -54,5 +56,21 @@ public class RequeteType {
         System.out.println(query);
         prepstate = this.conn.prepareStatement(query);
         return prepstate;
+    }
+     public void close() {
+     
+
+        if (prepstate != null) {
+            try {
+                prepstate.close();
+            } catch (SQLException ignore) {
+            }
+        }
+        if (conn != null) {
+            try {
+                conn.close();
+            } catch (SQLException ignore) {
+            }
+        }
     }
 }
