@@ -100,6 +100,6 @@ RequeteType requeteType = new RequeteType();
                 e = new Examen(date, nomdocteur, type, compterendu, PACS);
             }
             requeteType.close();
-            p.toString();
+            e.toString();
 }
 }
