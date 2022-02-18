@@ -211,4 +211,13 @@ public class Date {
         s+="Heure : "+heure+"h"+minute+"\n";
         return s;
     }
+    
+    public Date toDate(String s){
+        String[] parts = s.split("/");
+        String part1 = parts[0];
+        String part2 = parts[1];
+        String part3 = parts[2];
+        Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
+        return date;
+    }
 }
