@@ -22,7 +22,7 @@ String Passif =P.getPassif();
 String id =""+Passif+""+Type;
 // ATTENTION DOUBLONS//
 
-String update ="Id,Nom,prenom,Datenais,Adresse";
+String update ="id,nom,prenom,datenais,adresse";
 PreparedStatement prepupdate = requeteType.insert(tablepat, update);
 prepupdate.setString(1, id);
 prepupdate.setString(2, P.getNom());

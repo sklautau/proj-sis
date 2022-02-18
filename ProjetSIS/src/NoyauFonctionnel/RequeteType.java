@@ -7,6 +7,7 @@ package NoyauFonctionnel;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.SQLException;
@@ -28,7 +29,7 @@ public class RequeteType {
         this.user = user;
         this.password = password;
         try {
-            Class.forName("oracle.jdbc.driver") ;
+            Class.forName("oracle.jdbc.driver.OracleDriver") ;
             conn = DriverManager.getConnection(url, user, password);
             SQLWarningsExceptions.printWarnings(conn);
         }
@@ -50,7 +51,7 @@ public class RequeteType {
         String query = "INSERT INTO " + table + "(" + champ + ") VALUES (";
         System.out.println(champ);
         System.out.println(champSep);
-        // Ajoute autant de ? que de champs à la requête
+
         for (int i = 0; i < champSep.length - 1; i++) {
             query += "?, ";
         }
