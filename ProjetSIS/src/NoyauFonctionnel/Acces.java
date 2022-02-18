@@ -56,24 +56,11 @@ public static void LecturePatient(DICOM id) throws SQLException {
 
 }
 
-public static void AjoutDMR(DMR dmr) throws SQLException {
-RequeteType requeteType = new RequeteType();
-
-String update ="date,PH,type,PACS";
-PreparedStatement prepupdate = requeteType.insert(tablepat, update);
-prepupdate.setString(1, dmr.getIdPatient().toString());
-prepupdate.setString(2, dmr.getNomPatient());
-prepupdate.setString(3, dmr.getPrenomPatient());
-prepupdate.setString(4, dmr.getDatenais().toString());
-prepupdate.setString(5, dmr.getGenre().toString());
-prepupdate.executeUpdate();
-requeteType.close();
-}
 public static void AjoutExamen(Examen examen) throws SQLException {
 RequeteType requeteType = new RequeteType();
 
-String update ="date,PH,type,PACS";
-PreparedStatement prepupdate = requeteType.insert(tablepat, update);
+String update ="date,ph,type,cr,pacs";
+PreparedStatement prepupdate = requeteType.insert(tableexam, update);
 prepupdate.setString(1, examen.getDate());
 prepupdate.setString(2, examen.getNomDocteur());
 prepupdate.setString(3, examen.getTypeExamen().getTypeImagerie());
@@ -82,7 +69,7 @@ prepupdate.setString(5, examen.getCodePACS());
 prepupdate.executeUpdate();
 requeteType.close();
 }
-
+/**
 public static void LectureExamen(DICOM id) throws SQLException {
 RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tableexam + " where id = '" + id + "'";
@@ -190,7 +177,7 @@ RequeteType requeteType = new RequeteType();
             requeteType.close();
             e.toString();
 }
-
+*/
 public static Date toDate(String s){
         String[] parts = s.split("/");
         String part1 = parts[0];

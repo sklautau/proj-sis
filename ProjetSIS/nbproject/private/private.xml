@@ -5,10 +5,15 @@
         <group>
             <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/Acces.java</file>
             <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/Examen.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/AjouterExamen.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/AfficheExamen.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/Test.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/DMR_interface.java</file>
             <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/RequeteType.java</file>
             <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/AjouterPatient.java</file>
-            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/AjouterDMR.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/DMR.java</file>
             <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/NoyauFonctionnel/Patient.java</file>
+            <file>file:/C:/Users/Arthur/Documents/GitHub/proj-sis/ProjetSIS/src/Interface/Affiche_Patients.java</file>
         </group>
     </open-files>
 </project-private>

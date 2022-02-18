@@ -27,7 +27,7 @@ public class Test {
      TypeImagerie type=TypeImagerie.ANGIOIRM;
      TypeImagerie type1=TypeImagerie.ECHOGRAPHIE;
      Examen e =new Examen(d,"Fred",type,"tout va bien");
-     Examen e1 =new Examen(d,"Freddy",type1,"tout va bien",21);
+     Examen e1 =new Examen(dic,d,"Freddy",type1,"tout va bien",21);
      Genre g = Genre.M;
      DMR dmr = new DMR(liste,dic,"K","Paul",date,g);
      dmr.ajouterExam(e1);

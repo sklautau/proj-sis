@@ -12,6 +12,7 @@ package NoyauFonctionnel;
  * @HELLO WORLD
  */
 public class Examen {
+    private DICOM id;
     private Date date;
     private String nomDocteur;
     private TypeImagerie typeExamen;
@@ -19,7 +20,8 @@ public class Examen {
     private int PACScode;
     private boolean dmrpapier;
     
-    public Examen(Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
+    public Examen(DICOM id,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
+        this.id=id;
         this.date=date;
         this.nomDocteur=nomDocteur;
         this.typeExamen=typeExamen;

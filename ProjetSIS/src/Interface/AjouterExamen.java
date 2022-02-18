@@ -5,7 +5,7 @@
 package Interface;
 
 import NoyauFonctionnel.DICOM;
-import NoyauFonctionnel.DMR;
+import NoyauFonctionnel.Examen;
 import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Genre;
 import NoyauFonctionnel.Acces;
@@ -210,16 +210,18 @@ public class AjouterExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DICOM id =new DICOM(jTextField5.getText(),jTextField4.getText());
-        ArrayList liste=new ArrayList();
-        String[] parts = jTextField3.getText().split("/");
+        DICOM id =new DICOM(jTextField3.getText(),jTextField4.getText());
+        String[] parts = jTextField5.getText().split("/");
         String part1 = parts[0];
         String part2 = parts[1];
         String part3 = parts[2];
-    Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
-    DMR dmr=new DMR(liste,id,jTextField1.getText(),jTextField2.getText(),date,genre);
+        Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
+        //Examen e =new Examen(id,date,jTextField1.getText(),,jTextField3.getText(),jTextField5.getText(),4);
+        //public Examen(DICOM id,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode)
     
-    dmrString = dmr.toString();
+    
+    
+    
         
     Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau dmr est enregistré)
 
@@ -232,11 +234,11 @@ public class AjouterExamen extends javax.swing.JFrame {
     appel.setVisible(true);
     appel.setLocationRelativeTo(null);
     dispose();
-    try {
-            Acces.AjoutDMR(dmr);
-    }   catch (SQLException ex) { 
-            Logger.getLogger(AjouterExamen.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+    //try {
+       //     Acces.AjoutExamen(e);
+    //}   catch (SQLException ex) { 
+           // Logger.getLogger(AjouterExamen.class.getName()).log(Level.SEVERE, null, ex);
+        //} 
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
