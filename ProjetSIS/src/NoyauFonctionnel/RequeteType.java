@@ -20,7 +20,7 @@ public class RequeteType {
     private ResultSet result = null;
     private Statement state = null;
     public RequeteType() throws SQLException {
-        this("jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima", "vassona", "");
+        this("jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima", "vassona", "5cab28ee0c");
     }
 
     public RequeteType(String url, String user, String password) throws SQLException {

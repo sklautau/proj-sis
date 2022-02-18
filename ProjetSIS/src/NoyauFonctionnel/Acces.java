@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+
 public class Acces {
     
 private static final String tablepat = "PATIENT";
@@ -90,14 +91,17 @@ RequeteType requeteType = new RequeteType();
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Examen e = null;
-            Date date = new Date(2000,02,29);
+            
             while (resultat.next()) {
-                String Date = resultat.getString(1);
+                
+                String date = resultat.getString(1);
+               
+                
                 String nomdocteur = resultat.getString(2);
                 String type = resultat.getString(3);
                 String compterendu = resultat.getString(4);   
                 String PACS = resultat.getString(5);
-                e = new Examen(date, nomdocteur, type, compterendu, PACS);
+                //e = new Examen(date, nomdocteur, type, compterendu, PACS);
             }
             requeteType.close();
             e.toString();
