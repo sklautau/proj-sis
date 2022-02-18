@@ -42,7 +42,7 @@ public enum TypeImagerie {
     
     private String typeImagerie;
     
-    TypeImagerie(String TypeImagerie) {
+    TypeImagerie(String typeImagerie) {
         this.typeImagerie = typeImagerie;
     }
 

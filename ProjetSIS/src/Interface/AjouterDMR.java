@@ -13,6 +13,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author klaut
@@ -229,10 +231,10 @@ public class AjouterDMR extends javax.swing.JFrame {
     dispose();
     try {
             Acces.AjoutDMR(dmr);
-    } 
-    catch (SQLException ex) {
-            Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }   catch (SQLException ex) { 
+            Logger.getLogger(AjouterDMR.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

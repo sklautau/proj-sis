@@ -17,6 +17,8 @@ public class RequeteType {
     private String password;
     private Connection conn = null;
     private PreparedStatement prepstate = null;
+    private ResultSet result = null;
+    private Statement state = null;
     public RequeteType() throws SQLException {
         this("jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima", "vassona", "");
     }
@@ -72,5 +74,20 @@ public class RequeteType {
             } catch (SQLException ignore) {
             }
         }
+    }
+     public ResultSet select(String query) { //A REVOIR ! LA METHODE NE FONCTIONNE PAS
+        try {
+            //Création d'un objet statement 
+            state = this.conn.createStatement();
+
+            //On execute la SQL Query
+            result = state.executeQuery(query);
+            System.out.println("fin de la requete");
+            return result;
+        } catch (SQLException e) {
+            Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, e);
+            System.out.println("exception " + e.getMessage());
+        }
+        return null;
     }
 }
