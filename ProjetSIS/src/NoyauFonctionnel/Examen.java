@@ -52,13 +52,13 @@ public class Examen {
         return compteRendu;
     }
     
-    public int getCodePACS(){
+    public String getCodePACS(){
         if(dmrpapier=true){
             System.out.println("Erreur, DMR papier donc pas de code PACS");
-            return 0;
+            return "false";
         }
         else{
-            return PACScode;
+            return ""+PACScode;
         }
     }
     

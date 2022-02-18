@@ -9,7 +9,10 @@ import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Patient;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
+import NoyauFonctionnel.Acces;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Pauline KIEFER
@@ -37,6 +40,11 @@ public class AjouterPatient extends javax.swing.JFrame {
     String prenom;
     String lieuNais;
     String adress;
+    String dbUrl;
+    String username;
+    String password;
+    
+    
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -254,6 +262,12 @@ public class AjouterPatient extends javax.swing.JFrame {
     appel.setLocationRelativeTo(null);
     dispose();
     getPatientString();
+    try {
+            Acces.AjoutPatient(p);
+    } 
+    catch (SQLException ex) {
+            Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

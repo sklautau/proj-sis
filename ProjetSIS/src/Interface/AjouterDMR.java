@@ -8,11 +8,13 @@ import NoyauFonctionnel.DICOM;
 import NoyauFonctionnel.DMR;
 import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Genre;
-import NoyauFonctionnel.Patient;
+import NoyauFonctionnel.Acces;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author klaut
@@ -69,6 +71,11 @@ public class AjouterDMR extends javax.swing.JFrame {
         jLabel4.setText("Genre :");
 
         jButton1.setText("Créer DMR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Numéro identifiant :");
 
@@ -186,8 +193,20 @@ public class AjouterDMR extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        genre=Genre.F;
+    }
+    
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        genre=Genre.M;
+    }
+    
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
-private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DICOM id =new DICOM(jTextField5.getText(),jTextField4.getText());
         ArrayList liste=new ArrayList();
         String[] parts = jTextField3.getText().split("/");
@@ -210,26 +229,13 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
     appel.setVisible(true);
     appel.setLocationRelativeTo(null);
     dispose();
-    getDMRString();
-    } 
+    try {
+            Acces.AjoutDMR(dmr);
+    }   catch (SQLException ex) { 
+            Logger.getLogger(AjouterDMR.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     
-    public String[] getDMRString(){
-        String s=nom+"_"+prenom+"_"+date1+"_"+genre;
-        String[] parties = s.split("_");
-        return parties;
-    }
-    
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        genre=Genre.F;
-    }
-    
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        genre=Genre.M;
-    }
-    
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
