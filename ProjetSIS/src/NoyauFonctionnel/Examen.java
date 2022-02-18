@@ -66,6 +66,12 @@ public class Examen {
         return dmrpapier;
     }
     
+    public String PACScodeToString(){
+        String s ="";
+        s+=PACScode;
+        return s;
+    }
+    
     public String toString(){
         String s;
         s="date de l'examen : ";
