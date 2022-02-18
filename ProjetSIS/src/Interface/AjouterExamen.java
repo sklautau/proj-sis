@@ -5,10 +5,11 @@
 package Interface;
 
 import NoyauFonctionnel.DICOM;
-import NoyauFonctionnel.DMR;
 import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Genre;
 import NoyauFonctionnel.Acces;
+import NoyauFonctionnel.Examen;
+import NoyauFonctionnel.TypeImagerie;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -50,21 +51,21 @@ public class AjouterExamen extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nom du patient : ");
 
-        jLabel2.setText("Prénom du patient :");
+        jLabel2.setText("Nom du médecin :");
 
         jLabel3.setText("Date de naissance :");
 
@@ -81,7 +82,7 @@ public class AjouterExamen extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Numéro identifiant :");
+        jLabel5.setText("Type d'examen  :");
 
         jLabel6.setText("Nouvel examen");
 
@@ -93,15 +94,15 @@ public class AjouterExamen extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setText("Type");
-
-        jLabel4.setText("Passif");
-
         jLabel10.setText("Compte rendu :");
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel9.setText("Code dans le PACS : ");
+
+        jLabel11.setText("NOM DE L EXAMEN");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,43 +122,41 @@ public class AjouterExamen extends javax.swing.JFrame {
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(15, 15, 15)
-                                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(89, 89, 89)
-                                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(29, 29, 29)
-                                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                    .addComponent(jTextField5)))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 156, Short.MAX_VALUE))
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 169, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jButton1)))))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,24 +173,25 @@ public class AjouterExamen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel4))
-                .addGap(7, 7, 7)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -210,16 +210,101 @@ public class AjouterExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DICOM id =new DICOM(jTextField5.getText(),jTextField4.getText());
-        ArrayList liste=new ArrayList();
         String[] parts = jTextField3.getText().split("/");
         String part1 = parts[0];
         String part2 = parts[1];
         String part3 = parts[2];
-    Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
-    DMR dmr=new DMR(liste,id,jTextField1.getText(),jTextField2.getText(),date,genre);
-    
-    dmrString = dmr.toString();
+        Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
+        String type=jTextField5.getText();
+        TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
+                if (type.equals("ANGIOCTSCANNER")){
+                    t=t.ANGIOCTSCANNER;
+                }
+                else if (type.equals("ANGIOIRM")){
+                    t=t.ANGIOIRM;
+                }
+                else if (type.equals("ARTHROSCANNER")){
+                    t=t.ARTHROSCANNER;
+                }
+                else if (type.equals("BIOPSIESEIN")){
+                    t=t.BIOPSIESEIN;
+                }
+                else if (type.equals("BIOPSIEFLUOROSCANNER")){
+                    t=t.BIOPSIEFLUOROSCANNER;
+                }
+                else if (type.equals("CHOLANGIOIRM")){
+                    t=t.CHOLANGIOIRM;
+                }
+                else if (type.equals("COLONLAVEMENT")){
+                    t=t.COLONLAVEMENT;
+                }
+                else if (type.equals("CTCOLONOGRAPHIE")){
+                    t=t.CTCOLONOGRAPHIE;
+                }
+                else if (type.equals("CTCORONOGRAPHIE")){
+                    t=t.CTCORONOGRAPHIE;
+                }
+                else if (type.equals("CTSCANNERVOLUMIQUE")){
+                   t=t.CTSCANNERVOLUMIQUE; 
+                }
+                else if (type.equals("CYSTOGRAPHIESUSPUBIENNE")){
+                    t=t.CYSTOGRAPHIESUSPUBIENNE;
+                }
+                else if (type.equals("DEFECOIRM")){
+                    t=t.DEFECOIRM;
+                }
+                else if (type.equals("DENTASCANNER")){
+                    t=t.DENTASCANNER;
+                }
+                else if (type.equals("ECHOGRAPHIEREFLUXPEDIATRIQUE")){
+                    t=t.ECHOGRAPHIEREFLUXPEDIATRIQUE;
+                }
+                else if (type.equals("ECHOGRAPHIEDOPPLER")){
+                    t=t.ECHOGRAPHIEDOPPLER;
+                }
+                else if (type.equals("ECHOGRAPHIE")){
+                    t=t.ECHOGRAPHIE;
+                }
+                else if (type.equals("ENTEROCTSCANNER")){
+                    t=t.ENTEROCTSCANNER;
+                }
+                else if (type.equals("HYSTEROGRAPHIE")){
+                    t=t.HYSTEROGRAPHIE;
+                }
+                else if (type.equals("INFILTRATIONINTERAPOPHYSAIRE")){
+                   t=t.INFILTRATIONINTERAPOPHYSAIRE; 
+                }
+                else if (type.equals("INFILTRATIONPERIRADICULAIRE")){
+                   t=t.INFILTRATIONPERIRADICULAIRE; 
+                }
+                else if (type.equals("IRM")){
+                   t=t.IRM; 
+                }
+                else if (type.equals("IMAMMOTEST")){
+                    t=t.MAMMOTEST;
+                }
+                else if (type.equals("OEDTRANSIT")){
+                    t=t.OEDTRANSIT;
+                }
+                else if (type.equals("OSTEODENSITOMETRIE")){
+                   t=t.OSTEODENSITOMETRIE; 
+                }
+                else if (type.equals("PELVIMETRIE")){
+                    t=t.PELVIMETRIE;
+                }
+                else if (type.equals("PONCTIONTHYROIDE")){
+                    t=t.PONCTIONTHYROIDE;
+                }
+                else if (type.equals("RADIOLOGIECONVENTIONNELLE")){
+                    t=t.RADIOLOGIECONVENTIONNELLE;
+                }
+                else if (type.equals("SENOLOGIE")){
+                    t=t.SENOLOGIE;
+                }
+                else {
+                    t=t.UROGRAPHIEIV;
+                }
+    Examen exam=new Examen(date,jTextField2.getText(),t,jTextArea1.getText(),Integer.valueOf(jTextField6.getText()));
         
     Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau dmr est enregistré)
 
@@ -233,7 +318,7 @@ public class AjouterExamen extends javax.swing.JFrame {
     appel.setLocationRelativeTo(null);
     dispose();
     try {
-            Acces.AjoutDMR(dmr);
+            Acces.AjoutExamen(exam);
     }   catch (SQLException ex) { 
             Logger.getLogger(AjouterExamen.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -286,19 +371,19 @@ public class AjouterExamen extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
