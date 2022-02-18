@@ -29,11 +29,8 @@ public class Dossier {
     public String patientToString(){
         String s;
         s="identifiant : ";
-<<<<<<< HEAD
         s+=patient.getPassif()+" "+patient.getType()+"\n";
-=======
         s+=patient.getPassif()+""+patient.getType()+"\n";
->>>>>>> 518331e460c6f3c21c8cb2aec077325f4050f591
         s+="nom : ";
         s+=patient.getNom()+"\n";
         s+="prénom : ";
