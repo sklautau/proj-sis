@@ -72,6 +72,11 @@ public class Examen {
         return s;
     }
     
+    public int TointPACS(String s){
+        int pacs = Integer.valueOf(s);
+        return pacs;
+    }
+    
     public String toString(){
         String s;
         s="date de l'examen : ";
