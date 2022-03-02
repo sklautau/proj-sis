@@ -20,7 +20,7 @@ public class Examen {
     private int PACScode;
     private boolean dmrpapier;
     
-    public Examen(DICOM id,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
+    public Examen(DICOM dicom,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
         this.id=id;
         this.date=date;
         this.nomDocteur=nomDocteur;
@@ -53,7 +53,9 @@ public class Examen {
     public String getCompteRendu(){
         return compteRendu;
     }
-    
+    public String getId(){
+        return id.toString();
+    }
     public String getCodePACS(){
         if(dmrpapier=true){
             System.out.println("Erreur, DMR papier donc pas de code PACS");
