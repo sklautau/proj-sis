@@ -70,7 +70,7 @@ prepupdate.setString(6, examen.getCodePACS());
 prepupdate.executeUpdate();
 requeteType.close();
 }
-/**
+
 public static void LectureExamen(DICOM id) throws SQLException {
 RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tableexam + " where id = '" + id + "'";
@@ -79,11 +79,11 @@ RequeteType requeteType = new RequeteType();
             System.out.println("test");
             Examen e = null;
             while (resultat.next()) {
-                String dateString = resultat.getString(1);
-                String nomdocteur = resultat.getString(2);
-                String type = resultat.getString(3);
-                String compterendu = resultat.getString(4);   
-                String PACS = resultat.getString(5);
+                String dateString = resultat.getString(2);
+                String nomdocteur = resultat.getString(3);
+                String type = resultat.getString(4);
+                String compterendu = resultat.getString(5);   
+                String PACS = resultat.getString(6);
                 Date date=toDate(dateString);
                 TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
                 if (type.equals("ANGIOCTSCANNER")){
@@ -173,12 +173,12 @@ RequeteType requeteType = new RequeteType();
                 else {
                     t=t.UROGRAPHIEIV;
                 }
-                e = new Examen(date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
+                e = new Examen(id,date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
             }
             requeteType.close();
             e.toString();
 }
-*/
+
 public static Date toDate(String s){
         String[] parts = s.split("/");
         String part1 = parts[0];
@@ -187,4 +187,5 @@ public static Date toDate(String s){
         Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
         return date;
     }
+
 }

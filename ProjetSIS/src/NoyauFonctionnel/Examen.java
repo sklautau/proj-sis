@@ -20,7 +20,7 @@ public class Examen {
     private int PACScode;
     private boolean dmrpapier;
     
-    public Examen(DICOM dicom,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
+    public Examen(DICOM id,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
         this.id=id;
         this.date=date;
         this.nomDocteur=nomDocteur;
