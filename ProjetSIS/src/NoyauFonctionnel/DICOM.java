@@ -17,7 +17,6 @@ public class DICOM {
         this.type=type;
         this.passif=passif;
     }
-
     public String getType(){
         return type;
     }

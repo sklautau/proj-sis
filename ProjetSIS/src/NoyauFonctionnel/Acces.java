@@ -59,13 +59,14 @@ public static void LecturePatient(DICOM id) throws SQLException {
 public static void AjoutExamen(Examen examen) throws SQLException {
 RequeteType requeteType = new RequeteType();
 
-String update ="date,ph,type,cr,pacs";
+String update ="dicom,dateexam,ph,type,cr,pacs";
 PreparedStatement prepupdate = requeteType.insert(tableexam, update);
-prepupdate.setString(1, examen.getDate());
-prepupdate.setString(2, examen.getNomDocteur());
-prepupdate.setString(3, examen.getTypeExamen().getTypeImagerie());
-prepupdate.setString(4, examen.getCompteRendu());
-prepupdate.setString(5, examen.getCodePACS());
+prepupdate.setString(1, examen.getId());
+prepupdate.setString(2, examen.getDate());
+prepupdate.setString(3, examen.getNomDocteur());
+prepupdate.setString(4, examen.getTypeExamen().getTypeImagerie());
+prepupdate.setString(5, examen.getCompteRendu());
+prepupdate.setString(6, examen.getCodePACS());
 prepupdate.executeUpdate();
 requeteType.close();
 }
