@@ -10,12 +10,20 @@ package NoyauFonctionnel;
  * @author faysmnew
  */
 public class DICOM {
+    private int nbPatient=0;
     private String type;
     private String passif;
 
     public DICOM(String type, String passif){
+        nbPatient+=1;
         this.type=type;
         this.passif=passif;
+    }
+    
+    public DICOM(String type){
+        nbPatient+=1;
+        this.type=type;
+        passif=String.valueOf(nbPatient);
     }
 
     public String getType(){
@@ -33,7 +41,7 @@ public class DICOM {
         return s;
     }
 
-    public void manipuler(){
+    /*public void manipuler(){
 
-    }
+    }*/
 }
