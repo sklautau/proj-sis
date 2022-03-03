@@ -25,6 +25,12 @@ public class DICOM {
         this.type=type;
         passif=String.valueOf(nbPatient);
     }
+    
+    public DICOM(){
+        nbPatient+=1;
+        type=String.valueOf(Math.random());
+        passif=String.valueOf(nbPatient);
+    }
 
     public String getType(){
         return type;
