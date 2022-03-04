@@ -9,6 +9,10 @@ package NoyauFonctionnel;
  *
  * @author faysmnew
  */
+   
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+
 public class Date {
     private int annee;
     private int mois;
@@ -219,5 +223,11 @@ public class Date {
         String part3 = parts[2];
         Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
         return date;
+    }
+    
+    public LocalDateTime dateDuJour(){
+        DateTimeFormatter jour=DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
+        LocalDateTime maintenant=LocalDateTime.now();
+        return maintenant;
     }
 }
