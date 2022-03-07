@@ -28,7 +28,7 @@ public class DICOM {
     
     public DICOM(){
         nbPatient+=1;
-        type=String.valueOf(Math.random());
+        type=String.valueOf(Math.random()*Math.random());
         passif=String.valueOf(nbPatient);
     }
 
