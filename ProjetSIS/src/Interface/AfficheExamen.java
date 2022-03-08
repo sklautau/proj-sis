@@ -176,6 +176,25 @@ public class AfficheExamen extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+      private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        if (ConnexionInterface.getDroitDeCreation()==true){
+            AjouterExamen appel = new AjouterExamen();  //pour passer à la fenêtre ajouter examen 
+
+            //on récupère la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
+        }
+        else {
+            System.out.println("Droit de création non accordé.");
+        }
+    }  
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 // ICI 
     }
