@@ -352,6 +352,9 @@ public class FrameServeur_adaptation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    // POUR SE CONNECTER AU PORT METTRE LE NUMERO 4444
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Integer port = Integer.parseInt(this.fieldPort.getText());
         c = new ServeurHL7();
