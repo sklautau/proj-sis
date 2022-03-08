@@ -381,7 +381,7 @@ public class FrameServeur_adaptation extends javax.swing.JFrame {
         }
 
         if (!(patient.getValueDeath()).equals("")) {
-            this.labelFin7.setText("Décé : " + patient.getValueDeath());
+            this.labelFin7.setText("Décès : " + patient.getValueDeath());
 
             if (patient.getDeath() != null) {
                 this.labelFin8.setText("Décédé le: " + patient.getDeath().toString());
