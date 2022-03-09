@@ -133,10 +133,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
         
         try {
             Acces.Identification(login,mdp);
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
+            Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -147,6 +144,13 @@ public class ConnexionInterface extends javax.swing.JFrame {
                 appel.setVisible(true);
                 appel.setLocationRelativeTo(null);
                 dispose();
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+                
             
                 
             
