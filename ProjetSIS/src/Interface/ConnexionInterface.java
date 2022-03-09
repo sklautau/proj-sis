@@ -4,16 +4,23 @@
  */
 package Interface;
 
+import NoyauFonctionnel.Acces;
 import NoyauFonctionnel.Date;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import NoyauFonctionnel.Medecin;
+import java.sql.SQLException;
 import java.time.LocalDateTime;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  *
  * @author Pauline KIEFER
  */
+
+
+
 public class ConnexionInterface extends javax.swing.JFrame {
 
     /**
@@ -113,7 +120,10 @@ public class ConnexionInterface extends javax.swing.JFrame {
 
     private Date date;
     public static boolean droitDeCreation=true;
-    
+    private String login;
+    private String mdp;
+    private int id1;
+    private String motDePasse;
     public static boolean getDroitDeCreation(){
         return droitDeCreation;
     }
@@ -123,8 +133,12 @@ public class ConnexionInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (login.equals(id1) && motDePasse .equals(motDePasse )) {
-                System.out.println("message"); //pour les tests à enlever après
+            
+        try {
+            Acces.Identification(login,mdp);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
                 Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
@@ -136,10 +150,9 @@ public class ConnexionInterface extends javax.swing.JFrame {
                 appel.setVisible(true);
                 appel.setLocationRelativeTo(null);
                 dispose();
-            }
-            else {
-                System.out.println("ERREUR : mauvais identifiant ou mot de passe.");
-            }
+            
+                
+            
     }//GEN-LAST:event_jButton1ActionPerformed
 
  private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
@@ -173,11 +186,6 @@ public class ConnexionInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
-    private String login;
-    private String mdp;
-    private int id1;
-    private String motDePasse;
-    
     //ATTENTION IL FAUT INITIALISER id1 et motDePasse avec les termes de l'instance concernée de Medecin
     /*public void initIdEtMdp(){
         id1=Medecin.id;

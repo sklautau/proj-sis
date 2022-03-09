@@ -228,7 +228,7 @@ public class AjouterPatient extends javax.swing.JFrame {
     dispose();
     getPatientString();
     try {
-            Acces.AjoutPatient(p);
+            Acces.AjoutPatient(p,"utilisateur","mdp");
     } 
     catch (SQLException ex) {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
