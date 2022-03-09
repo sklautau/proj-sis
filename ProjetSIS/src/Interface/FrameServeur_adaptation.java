@@ -340,7 +340,7 @@ public class FrameServeur_adaptation extends javax.swing.JFrame {
             .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(layout.createSequentialGroup()
                     .add(0, 0, Short.MAX_VALUE)
-                    .add(panelConexion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 550, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(panelConexion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(

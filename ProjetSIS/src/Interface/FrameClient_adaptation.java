@@ -160,6 +160,7 @@ public class FrameClient_adaptation extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(450, 589));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         panelCard.setLayout(new java.awt.CardLayout());
