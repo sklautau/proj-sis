@@ -18,6 +18,8 @@ public class AfficheExamen extends javax.swing.JFrame {
      */
     public AfficheExamen() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**
@@ -44,7 +46,8 @@ public class AfficheExamen extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setSize(new java.awt.Dimension(500, 500));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setSize(new java.awt.Dimension(400, 450));
 
         jLabel1.setText("Examen ");
 
@@ -118,12 +121,10 @@ public class AfficheExamen extends javax.swing.JFrame {
                             .addComponent(jButton1)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton3))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3, jTextField4});
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton1, jButton2, jButton3});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

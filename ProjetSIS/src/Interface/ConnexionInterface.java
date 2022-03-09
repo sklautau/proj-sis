@@ -35,6 +35,8 @@ public class ConnexionInterface extends javax.swing.JFrame {
      */
     public ConnexionInterface() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**
@@ -55,7 +57,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 500));
-        setSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(350, 275));
 
         jLabel1.setText("Identifiant : ");
 
