@@ -67,6 +67,11 @@ public class Affiche_Patients extends javax.swing.JFrame {
         jButton4.setText("Déconnexion");
 
         jButton5.setText("Ajouter un patient");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,6 +141,25 @@ public class Affiche_Patients extends javax.swing.JFrame {
         //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        if (ConnexionInterface.getDroitDeCreation()==true){
+            AjouterPatient appel = new AjouterPatient();  //pour passer à la fenêtre ajouter patient 
+
+            //on récupère la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
+        }
+        else {
+            System.out.println("Droit de création non accordé.");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         RechercherPatient appel;  //pour passer à la fenêtre DMR (quand clique sur un patient)
         appel = new RechercherPatient();
@@ -170,24 +194,6 @@ private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
    // ICI
 }
     
-private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        if (ConnexionInterface.getDroitDeCreation()==true){
-            AjouterPatient appel = new AjouterPatient();  //pour passer à la fenêtre ajouter patient 
-
-            //on récupère la taille de l'écran
-            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
-
-            //on place la fenêtre au milieu
-            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
-
-            appel.setVisible(true);
-            appel.setLocationRelativeTo(null);
-            dispose();
-        }
-        else {
-            System.out.println("Droit de création non accordé.");
-        }
-    }  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
