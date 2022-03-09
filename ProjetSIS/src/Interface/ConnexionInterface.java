@@ -9,10 +9,17 @@ import NoyauFonctionnel.Date;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import NoyauFonctionnel.Medecin;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.attribute.FileAttribute;
+import java.nio.file.Files;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.io.FileWriter;
 
 /*
  *
@@ -138,7 +145,17 @@ public class ConnexionInterface extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String login = jTextField1.getText();
         String mdp = jPasswordField1.getText();
-        
+        try {
+
+            // Create an temporary file
+            File fileTemp = File.createTempFile("temp_data", ".txt");
+            FileWriter W = new FileWriter(fileTemp);
+            W.write(login);
+            W.write(mdp);
+            // A DEPLACER SUR UNE METHODE
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         try {
             Acces.Identification(login,mdp);
             Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
