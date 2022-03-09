@@ -42,7 +42,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
-        setSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(425, 350));
 
         jLabel1.setText("Liste des patients : ");
 
