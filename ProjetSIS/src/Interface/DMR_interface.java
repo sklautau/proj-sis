@@ -38,7 +38,7 @@ public class DMR_interface extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
-        setSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(400, 350));
 
         jLabel1.setText("Liste des examens :");
 
@@ -78,14 +78,13 @@ public class DMR_interface extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(100, 100, 100)
-                                .addComponent(jButton1)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jButton1))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton2)
                         .addGap(189, 189, 189)
                         .addComponent(jButton3)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
