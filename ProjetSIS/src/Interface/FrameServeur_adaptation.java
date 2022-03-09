@@ -1,6 +1,8 @@
 package Interface;
 
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import library.interfaces.Patient;
 import library.interfaces.PatientLocation;
 import library.interfaces.ServeurHL7;
@@ -31,6 +33,8 @@ public class FrameServeur_adaptation extends javax.swing.JFrame {
         initComponents();
         this.patient = null;
         this.message = null;
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /** This method is called from within the constructor to

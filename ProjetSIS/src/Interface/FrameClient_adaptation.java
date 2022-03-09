@@ -12,6 +12,8 @@ package Interface;
  */
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -39,6 +41,8 @@ public class FrameClient_adaptation extends javax.swing.JFrame {
     /** Creates new form FrameClient */
     public FrameClient_adaptation() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /** This method is called from within the constructor to
