@@ -44,6 +44,7 @@ public class AfficheExamen extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setText("Examen ");
