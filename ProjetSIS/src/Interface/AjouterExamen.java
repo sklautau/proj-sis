@@ -260,7 +260,7 @@ public class AjouterExamen extends javax.swing.JFrame {
     appel.setLocationRelativeTo(null);
     dispose();
     try {
-            Acces.AjoutExamen(exam);
+            Acces.AjoutExamen(exam,"utilisateur","mdp");
     }   catch (SQLException ex) { 
             Logger.getLogger(AjouterExamen.class.getName()).log(Level.SEVERE, null, ex);
         } 

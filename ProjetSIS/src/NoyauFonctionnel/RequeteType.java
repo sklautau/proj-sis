@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.sql.Connection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.sql.SQLException;
-import java.sql.DriverManager;
+import java.sql.*;
+
 public class RequeteType {
     private String url;
     private String user;
@@ -20,16 +20,13 @@ public class RequeteType {
     private PreparedStatement prepstate = null;
     private ResultSet result = null;
     private Statement state = null;
-    public RequeteType() throws SQLException {
-        this("jdbc:oracle:thin:@im2ag-oracle.e.ujf-grenoble.fr:1521:ufrima", "vassona", "5cab28ee0c");
-    }
 
     public RequeteType(String url, String user, String password) throws SQLException {
         this.url = url;
         this.user = user;
         this.password = password;
         try {
-            Class.forName("oracle.jdbc.driver.OracleDriver") ;
+            //Class.forName("com.mysql.jdbc.driver") ;
             conn = DriverManager.getConnection(url, user, password);
             SQLWarningsExceptions.printWarnings(conn);
         }
@@ -37,8 +34,8 @@ public class RequeteType {
             // Print information about SQL exceptions
             SQLWarningsExceptions.printExceptions(se);
             return;
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
+        //} catch (ClassNotFoundException ex) {
+         //   Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
         }
     return;
 }

@@ -10,13 +10,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
+
 public class Acces {
     
 private static final String tablepat = "PATIENT";
 private static final String tableexam = "EXAMEN";
-public static void AjoutPatient(Patient P) throws SQLException {
+private static final String adresseBD = "jdbc:mysql://localhost:3306/sir";
 
-RequeteType requeteType = new RequeteType();
+public static void Identification(String utilisateur,String motDePasse) throws SQLException {
+    RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+}
+
+public static void AjoutPatient(Patient P,String utilisateur,String motDePasse) throws SQLException {
+
+RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
 String Type = P.getType();
 String Passif =P.getPassif();
 String id =""+Passif+""+Type;
@@ -35,9 +42,9 @@ requeteType.close();
 
 
 
-public static void LecturePatient(DICOM id) throws SQLException {
+public static void LecturePatient(DICOM id,String utilisateur,String motDePasse) throws SQLException {
 
-            RequeteType requeteType = new RequeteType();
+            RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
             String query = "SELECT * FROM " + tablepat + " where id = '" + id + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
@@ -56,8 +63,8 @@ public static void LecturePatient(DICOM id) throws SQLException {
 
 }
 
-public static void AjoutExamen(Examen examen) throws SQLException {
-RequeteType requeteType = new RequeteType();
+public static void AjoutExamen(Examen examen,String utilisateur,String motDePasse) throws SQLException {
+RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
 
 String update ="dicom,dateexam,ph,type,cr,pacs";
 PreparedStatement prepupdate = requeteType.insert(tableexam, update);
@@ -71,8 +78,8 @@ prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static void LectureExamen(DICOM id) throws SQLException {
-RequeteType requeteType = new RequeteType();
+public static void LectureExamen(DICOM id,String utilisateur,String motDePasse) throws SQLException {
+RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
             String query = "SELECT * FROM " + tableexam + " where id = '" + id + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
