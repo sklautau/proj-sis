@@ -6,7 +6,7 @@
       <Color id="Default Cursor"/>
     </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[500, 500]"/>
+      <Dimension value="[400, 450]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
