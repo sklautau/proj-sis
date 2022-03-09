@@ -28,6 +28,8 @@ public class ConnexionInterface extends javax.swing.JFrame {
      */
     public ConnexionInterface() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**

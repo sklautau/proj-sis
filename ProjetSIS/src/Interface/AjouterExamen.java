@@ -27,6 +27,8 @@ public class AjouterExamen extends javax.swing.JFrame {
      */
     public AjouterExamen() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**

@@ -20,7 +20,8 @@ public class RechercheExamen extends javax.swing.JFrame {
      */
     public RechercheExamen() {
         initComponents();
-        this.setPreferredSize(new Dimension (200,200));
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
     
     /**

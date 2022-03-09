@@ -18,6 +18,8 @@ public class DMR_interface extends javax.swing.JFrame {
      */
     public DMR_interface() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**

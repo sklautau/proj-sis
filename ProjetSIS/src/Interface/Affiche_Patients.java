@@ -20,6 +20,8 @@ public class Affiche_Patients extends javax.swing.JFrame {
      */
     public Affiche_Patients() {
         initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
 
     /**
