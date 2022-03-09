@@ -50,7 +50,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 500));
-        setSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(350, 275));
 
         jLabel1.setText("Identifiant : ");
 
