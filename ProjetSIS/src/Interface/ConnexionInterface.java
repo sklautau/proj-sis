@@ -126,10 +126,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
 
     private Date date;
     public static boolean droitDeCreation=true;
-    private String login;
-    private String mdp;
-    private int id1;
-    private String motDePasse;
+  
     public static boolean getDroitDeCreation(){
         return droitDeCreation;
     }
@@ -139,7 +136,9 @@ public class ConnexionInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-            
+        String login = jTextField1.getText();
+        String mdp = jPasswordField1.getText();
+        
         try {
             Acces.Identification(login,mdp);
         } catch (SQLException ex) {
@@ -192,20 +191,14 @@ public class ConnexionInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
-    //ATTENTION IL FAUT INITIALISER id1 et motDePasse avec les termes de l'instance concernée de Medecin
-    /*public void initIdEtMdp(){
-        id1=Medecin.id;
-        motDePasse=Medecin.mdp;
-    }*/
-    //ARTHUR
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
-        login = jTextField1.getText();
+       
     }
     //récupérer le texte présent dans le champ à côté de login pour après le vérifier
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {
-        mdp = String.valueOf(jPasswordField1.getPassword());
+        
     }
     //même principe avec le champ après Mot de passe 
 
