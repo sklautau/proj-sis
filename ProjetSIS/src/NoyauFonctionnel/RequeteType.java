@@ -20,7 +20,19 @@ public class RequeteType {
     private PreparedStatement prepstate = null;
     private ResultSet result = null;
     private Statement state = null;
-
+    public RequeteType() throws SQLException {
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sir", "admin", password);
+            SQLWarningsExceptions.printWarnings(conn);
+        }
+        catch( SQLException se ) {
+            // Print information about SQL exceptions
+            SQLWarningsExceptions.printExceptions(se);
+            return;
+        //} catch (ClassNotFoundException ex) {
+         //   Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public RequeteType(String url, String user, String password) throws SQLException {
         this.url = url;
         this.user = user;

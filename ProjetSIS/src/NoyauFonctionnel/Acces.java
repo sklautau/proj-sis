@@ -21,9 +21,9 @@ public static void Identification(String utilisateur,String motDePasse) throws S
     RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
 }
 
-public static void AjoutPatient(Patient P,String utilisateur,String motDePasse) throws SQLException {
+public static void AjoutPatient(Patient P) throws SQLException {
 
-RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+RequeteType requeteType = new RequeteType();
 String Type = P.getType();
 String Passif =P.getPassif();
 String id =""+Passif+""+Type;
@@ -42,9 +42,9 @@ requeteType.close();
 
 
 
-public static void LecturePatient(DICOM id,String utilisateur,String motDePasse) throws SQLException {
+public static void LecturePatient(DICOM id) throws SQLException {
 
-            RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+            RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tablepat + " where id = '" + id + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
@@ -63,8 +63,8 @@ public static void LecturePatient(DICOM id,String utilisateur,String motDePasse)
 
 }
 
-public static void AjoutExamen(Examen examen,String utilisateur,String motDePasse) throws SQLException {
-RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+public static void AjoutExamen(Examen examen) throws SQLException {
+RequeteType requeteType = new RequeteType();
 
 String update ="dicom,dateexam,ph,type,cr,pacs";
 PreparedStatement prepupdate = requeteType.insert(tableexam, update);
@@ -79,7 +79,7 @@ requeteType.close();
 }
 
 public static void LectureExamen(DICOM id,String utilisateur,String motDePasse) throws SQLException {
-RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tableexam + " where id = '" + id + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
