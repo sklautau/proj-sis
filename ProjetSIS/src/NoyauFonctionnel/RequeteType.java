@@ -22,7 +22,7 @@ public class RequeteType {
     private Statement state = null;
     public RequeteType() throws SQLException {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sir", "admin", password);
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sir", "root", "19mars2000");
             SQLWarningsExceptions.printWarnings(conn);
         }
         catch( SQLException se ) {

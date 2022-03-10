@@ -139,6 +139,18 @@ public class Affiche_Patients extends javax.swing.JFrame {
                 jList1.addElement("Le patient n'existe pas.");
             }*/
         //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
+        DMR_interface appel;  //pour passer à la fenêtre connexion (bouton retour)
+        appel = new DMR_interface();
+
+            //on récupere la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

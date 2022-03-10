@@ -181,6 +181,19 @@ public class RechercheExamen extends javax.swing.JFrame {
                 jList1.addElement("L'examen n'existe pas.");
             }*/
         //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
+        
+         AfficheExamen appel;  //pour passer à la fenêtre DMR 
+        appel = new AfficheExamen();
+
+            //on récupere la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
     }  
      
       
