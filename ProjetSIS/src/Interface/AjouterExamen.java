@@ -118,6 +118,11 @@ public class AjouterExamen extends javax.swing.JFrame {
         jLabel12.setText("Type");
 
         jButton2.setText("Retour");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Déconnexion");
 
@@ -272,20 +277,6 @@ public class AjouterExamen extends javax.swing.JFrame {
     
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        AfficheExamen appel = new AfficheExamen();  //pour passer à la fenêtre Afficher Examen
-
-        //on récupère la taille de l'écran
-        Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
-
-        //on place la fenêtre au milieu
-        appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
-
-        appel.setVisible(true);
-        appel.setLocationRelativeTo(null);
-        dispose();
-    }
-    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
        // ICI
     }
@@ -297,6 +288,20 @@ public class AjouterExamen extends javax.swing.JFrame {
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+          AfficheExamen appel = new AfficheExamen();  //pour passer à la fenêtre Afficher Examen
+
+        //on récupère la taille de l'écran
+        Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+        //on place la fenêtre au milieu
+        appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+        appel.setVisible(true);
+        appel.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
