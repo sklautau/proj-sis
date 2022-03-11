@@ -51,6 +51,11 @@ public class RechercheExamen extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(425, 250));
 
         jButton1.setText("Retour");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Type d'examen :");
 
@@ -65,6 +70,11 @@ public class RechercheExamen extends javax.swing.JFrame {
         jLabel3.setText("jj/mm/aaaa");
 
         jButton2.setText("Rechercher");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Déconnexion");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -146,8 +156,12 @@ public class RechercheExamen extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+   
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // ICI
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR 
         
 
@@ -160,11 +174,10 @@ public class RechercheExamen extends javax.swing.JFrame {
             appel.setVisible(true);
             appel.setLocationRelativeTo(null);
             dispose();
-    }    
-      
-     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        boolean continuer=true;
-        /*String[] parts = jTextField2.getText().split("/");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+           /*String[] parts = jTextField2.getText().split("/");
         String part1 = parts[0];
         String part2 = parts[1];
         String part3 = parts[2];
@@ -194,14 +207,8 @@ public class RechercheExamen extends javax.swing.JFrame {
             appel.setVisible(true);
             appel.setLocationRelativeTo(null);
             dispose();
-    }  
-    
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // ICI
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    
-     
+    }//GEN-LAST:event_jButton2ActionPerformed
+ 
       
     /**
      * @param args the command line arguments
