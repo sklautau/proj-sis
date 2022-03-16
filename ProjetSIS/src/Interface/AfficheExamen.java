@@ -83,6 +83,11 @@ public class AfficheExamen extends javax.swing.JFrame {
         });
 
         jButton2.setText("Ajouter un examen");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Déconnexion");
 
@@ -186,7 +191,7 @@ public class AfficheExamen extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-      private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (ConnexionInterface.getDroitDeCreation()==true){
             AjouterExamen appel = new AjouterExamen();  //pour passer à la fenêtre ajouter examen 
 
@@ -203,8 +208,8 @@ public class AfficheExamen extends javax.swing.JFrame {
         else {
             System.out.println("Droit de création non accordé.");
         }
-    }  
-    
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 // ICI 
     }

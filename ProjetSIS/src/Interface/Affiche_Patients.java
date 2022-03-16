@@ -61,10 +61,25 @@ public class Affiche_Patients extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         jButton2.setText("Rechercher un patient");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Retour");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Déconnexion");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Ajouter un patient");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -139,6 +154,18 @@ public class Affiche_Patients extends javax.swing.JFrame {
                 jList1.addElement("Le patient n'existe pas.");
             }*/
         //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
+        DMR_interface appel;  //pour passer à la fenêtre connexion (bouton retour)
+        appel = new DMR_interface();
+
+            //on récupere la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -160,22 +187,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        RechercherPatient appel;  //pour passer à la fenêtre DMR (quand clique sur un patient)
-        appel = new RechercherPatient();
-
-            //on récupere la taille de l'écran
-            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
-
-            //on place la fenêtre au milieu
-            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
-
-            appel.setVisible(true);
-            appel.setLocationRelativeTo(null);
-            dispose();
-}
-
-private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         ConnexionInterface appel;  //pour passer à la fenêtre connexion (bouton retour)
         appel = new ConnexionInterface();
 
@@ -188,12 +200,26 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
             appel.setVisible(true);
             appel.setLocationRelativeTo(null);
             dispose();
-}
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-   // ICI
-}
-    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        RechercherPatient appel;  //pour passer à la fenêtre DMR (quand clique sur un patient)
+        appel = new RechercherPatient();
+
+            //on récupere la taille de l'écran
+            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+            //on place la fenêtre au milieu
+            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+            appel.setVisible(true);
+            appel.setLocationRelativeTo(null);
+            dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         // ICI
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -327,7 +327,7 @@ public class FrameServeur_adaptation extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Service de chirurgie cardiaque");
+        jLabel1.setText("Service de radiologie");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         panelConexion.add(jLabel1, gridBagConstraints);
