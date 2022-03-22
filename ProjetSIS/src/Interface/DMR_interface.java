@@ -22,6 +22,7 @@ public class DMR_interface extends javax.swing.JFrame {
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
      
+     //nouveau constructeur
     public DMR_interface(String t) {
         initComponents();
         jTextArea2.setText(t);
