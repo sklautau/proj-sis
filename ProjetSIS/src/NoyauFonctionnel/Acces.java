@@ -112,5 +112,4 @@ public static Date toDate(String s){
         Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
         return date;
     }
-
 }

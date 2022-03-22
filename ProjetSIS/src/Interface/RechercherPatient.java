@@ -171,7 +171,7 @@ public class RechercherPatient extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
      private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // ICI
+        
     }     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

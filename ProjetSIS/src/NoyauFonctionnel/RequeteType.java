@@ -100,4 +100,8 @@ public class RequeteType {
         }
         return null;
     }
+     
+    public void deconnexion(){
+        this.conn = null;
+    }   
 }
