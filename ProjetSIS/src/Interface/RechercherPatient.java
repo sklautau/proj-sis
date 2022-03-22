@@ -4,9 +4,13 @@
  */
 package Interface;
 
+import NoyauFonctionnel.Acces;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.SQLException;
 /**
  *
  * @author Pauline KIEFER
@@ -149,6 +153,7 @@ public class RechercherPatient extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+       
         
     }//GEN-LAST:event_jTextField1ActionPerformed
 
@@ -167,6 +172,15 @@ public class RechercherPatient extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String p ="";
+        try {
+            Acces.LecturePatient(jTextField1.getText(),jTextField2.getText(),jTextField3.getText());
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR_interface
 
         //on récupère la taille de l'écran
@@ -175,8 +189,8 @@ public class RechercherPatient extends javax.swing.JFrame {
         //on place la fenêtre au milieu
         appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
 
-        //A compléter
-        //appel.jList1.add(this);
+        
+        appel.jList1.;
         appel.setVisible(true);
         appel.setLocationRelativeTo(null);
         dispose(); 

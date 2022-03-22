@@ -42,7 +42,7 @@ requeteType.close();
 
 
 
-public static void LecturePatient(String nom,String prenom,String datenais) throws SQLException {
+public static String LecturePatient(String nom,String prenom,String datenais) throws SQLException {
 
             RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tablepat + " where id = '" + nom +"'AND dateexam ='"+datenais+"'";
@@ -61,7 +61,7 @@ public static void LecturePatient(String nom,String prenom,String datenais) thro
                 p = new Patient(idp, nom, prenom, date, adresse);
             }
             requeteType.close();
-            p.toString();
+            return p.toString();
 
 }
 
