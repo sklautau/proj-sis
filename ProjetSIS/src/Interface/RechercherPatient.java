@@ -173,8 +173,9 @@ public class RechercherPatient extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        String p="";
         
-        try {String p = Acces.LecturePatient(jTextField1.getText(),jTextField2.getText(),jTextField3.getText());
+        try {p = Acces.LecturePatient(jTextField1.getText(),jTextField2.getText(),jTextField3.getText());
         } 
         catch (SQLException ex) {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
@@ -189,6 +190,7 @@ public class RechercherPatient extends javax.swing.JFrame {
         //on place la fenêtre au milieu
         appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);       
         appel.setVisible(true);
+        appel.jTextArea2.setText(p);
         appel.setLocationRelativeTo(null);
         dispose(); 
     }//GEN-LAST:event_jButton1ActionPerformed

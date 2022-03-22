@@ -187,26 +187,9 @@ public class RechercheExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-           /*String[] parts = jTextField2.getText().split("/");
-        String part1 = parts[0];
-        String part2 = parts[1];
-        String part3 = parts[2];
-         date=new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
-         type=type.getTypeImagerie(jTextField1.getText());
-            System.out.println(e.toString());
-            if (e.getDate().equals(date) && e.getType().equals(type)) {;
-                //si c'est le même examen on l'aaffiche
-                jList1.addElement(p.toString());
-                repaint();
-                continuer=false;
-            }
-            else {  //sinon on dit qu'il n'existe pas 
-                jList1.addElement("L'examen n'existe pas.");
-            }*/
-        //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
-        
+
          AfficheExamen appel;  //pour passer à la fenêtre DMR 
-        appel = new AfficheExamen();
+         appel = new AfficheExamen();
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
