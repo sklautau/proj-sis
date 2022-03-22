@@ -182,7 +182,7 @@ public class RechercherPatient extends javax.swing.JFrame {
         }
         
         
-        DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR_interface
+        DMR_interface appel = new DMR_interface(p);  //pour passer à la fenêtre DMR_interface
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -190,7 +190,6 @@ public class RechercherPatient extends javax.swing.JFrame {
         //on place la fenêtre au milieu
         appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);       
         appel.setVisible(true);
-        appel.jTextArea2.setText(p);
         appel.setLocationRelativeTo(null);
         dispose(); 
     }//GEN-LAST:event_jButton1ActionPerformed
