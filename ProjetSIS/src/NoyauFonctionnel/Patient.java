@@ -54,8 +54,7 @@ public class Patient {
     
     public String toString(){
         String s;
-        s="identifiant : ";
-        s+=id.toString()+"\n";
+        s="";
         s+="nom : ";
         s+=nom+"\n";
         s+="prénom : ";
