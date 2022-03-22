@@ -167,7 +167,19 @@ public class RechercherPatient extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR_interface
+
+        //on récupère la taille de l'écran
+        Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+        //on place la fenêtre au milieu
+        appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+        //A compléter
+        //appel.jList1.add(this);
+        appel.setVisible(true);
+        appel.setLocationRelativeTo(null);
+        dispose(); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
      private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
