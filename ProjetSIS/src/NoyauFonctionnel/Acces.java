@@ -42,23 +42,23 @@ requeteType.close();
 
 
 
-public static void LecturePatient(String nom) throws SQLException {
+public static void LecturePatient(String nom,String prenom,String datenais) throws SQLException {
 
             RequeteType requeteType = new RequeteType();
-            String query = "SELECT * FROM " + tablepat + " where id = '" + nom + "'";
+            String query = "SELECT * FROM " + tablepat + " where id = '" + nom +"'AND dateexam ='"+datenais+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Patient p = null;
             while (resultat.next()) {
                 String id = resultat.getString(1);
-                String nomp = resultat.getString(2);
-                String prenom = resultat.getString(3);
-                String datenais = resultat.getString(4);
+                //String nomp = resultat.getString(2);
+                //String prenom = resultat.getString(3);
+                //String datenais = resultat.getString(4);
                 String adresse = resultat.getString(5); 
                 Date date=toDate(datenais);
                 DICOM idp = new DICOM(""+id);
-                p = new Patient(idp, nomp, prenom, date, adresse);
+                p = new Patient(idp, nom, prenom, date, adresse);
             }
             requeteType.close();
             p.toString();
@@ -80,21 +80,21 @@ prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static void LectureExamen(String type) throws SQLException {
+public static void LectureExamen(String type,String dateexam) throws SQLException {
 RequeteType requeteType = new RequeteType();
-            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'";
+            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Examen e = null;
             while (resultat.next()) {
                 String id = resultat.getString(1);
-                String dateString = resultat.getString(2);
+                //String dateexam = resultat.getString(2);
                 String nomdocteur = resultat.getString(3);
-                String typee = resultat.getString(4);
+                //String type = resultat.getString(4);
                 String compterendu = resultat.getString(5);   
                 String PACS = resultat.getString(6);
-                Date date=toDate(dateString);
+                Date date=toDate(dateexam);
                 TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
                 t=t.getTypeImagerie(type);
                 DICOM ide = new DICOM(""+id);

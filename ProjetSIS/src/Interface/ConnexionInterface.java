@@ -79,6 +79,11 @@ public class ConnexionInterface extends javax.swing.JFrame {
         jLabel3.setText("Si vous êtes un médecin extérieur");
 
         jButton2.setText("Cliquez ici");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,7 +188,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
             
     }//GEN-LAST:event_jButton1ActionPerformed
 
- private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (date.dateDuJour().toString().equals(date)){
                 droitDeCreation=false;
                 System.out.println("message"); //pour les tests à enlever après
@@ -202,8 +207,8 @@ public class ConnexionInterface extends javax.swing.JFrame {
             else {
                 System.out.println("ERREUR : date de visite non conforme.");
             }
-    }  
-    
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
