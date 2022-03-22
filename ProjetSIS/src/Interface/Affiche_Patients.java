@@ -213,7 +213,17 @@ public class Affiche_Patients extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         // ICI
+         ConnexionInterface appel = new ConnexionInterface();  //pour passer à la fenêtre Affiche_Patients (retour)
+
+        //on récupère la taille de l'écran
+        Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+
+        //on place la fenêtre au milieu
+        appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
+
+        appel.setVisible(true);
+        appel.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
