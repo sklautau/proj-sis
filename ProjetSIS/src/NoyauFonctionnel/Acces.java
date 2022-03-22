@@ -42,21 +42,23 @@ requeteType.close();
 
 
 
-public static void LecturePatient(DICOM id) throws SQLException {
+public static void LecturePatient(String nom) throws SQLException {
 
             RequeteType requeteType = new RequeteType();
-            String query = "SELECT * FROM " + tablepat + " where id = '" + id + "'";
+            String query = "SELECT * FROM " + tablepat + " where id = '" + nom + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Patient p = null;
             while (resultat.next()) {
-                String nom = resultat.getString(2);
+                String id = resultat.getString(1);
+                String nomp = resultat.getString(2);
                 String prenom = resultat.getString(3);
                 String datenais = resultat.getString(4);
                 String adresse = resultat.getString(5); 
                 Date date=toDate(datenais);
-                p = new Patient(id, nom, prenom, date, adresse);
+                DICOM idp = new DICOM(""+id);
+                p = new Patient(idp, nomp, prenom, date, adresse);
             }
             requeteType.close();
             p.toString();
@@ -78,23 +80,25 @@ prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static void LectureExamen(DICOM id,String utilisateur,String motDePasse) throws SQLException {
+public static void LectureExamen(String type) throws SQLException {
 RequeteType requeteType = new RequeteType();
-            String query = "SELECT * FROM " + tableexam + " where id = '" + id + "'";
+            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Examen e = null;
             while (resultat.next()) {
+                String id = resultat.getString(1);
                 String dateString = resultat.getString(2);
                 String nomdocteur = resultat.getString(3);
-                String type = resultat.getString(4);
+                String typee = resultat.getString(4);
                 String compterendu = resultat.getString(5);   
                 String PACS = resultat.getString(6);
                 Date date=toDate(dateString);
                 TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
                 t=t.getTypeImagerie(type);
-                e = new Examen(id,date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
+                DICOM ide = new DICOM(""+id);
+                e = new Examen(ide,date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
             }
             requeteType.close();
             e.toString();
