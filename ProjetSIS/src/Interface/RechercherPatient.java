@@ -57,6 +57,11 @@ public class RechercherPatient extends javax.swing.JFrame {
         });
 
         jButton1.setText("Rechercher");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Retour");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -146,9 +151,7 @@ public class RechercherPatient extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         
     }//GEN-LAST:event_jTextField1ActionPerformed
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){
-    // A COMPLETER EN FONCTION DE LA BD
-    }
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre DAffiche_Patients (retour)
 
@@ -162,6 +165,10 @@ public class RechercherPatient extends javax.swing.JFrame {
         appel.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
      private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         // ICI
