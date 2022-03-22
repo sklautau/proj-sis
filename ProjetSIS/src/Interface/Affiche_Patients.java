@@ -23,6 +23,13 @@ public class Affiche_Patients extends javax.swing.JFrame {
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
+    
+    public Affiche_Patients(String t) {
+        initComponents();
+        jTextArea1.setText(t);
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
