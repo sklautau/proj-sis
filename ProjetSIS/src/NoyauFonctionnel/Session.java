@@ -11,6 +11,7 @@ package NoyauFonctionnel;
 public class Session {
     private String user;
     private String mdp;
+    
     public Session(String user, String mdp){
         this.user = user;
         this.mdp = mdp;
