@@ -194,7 +194,7 @@ public class RechercheExamen extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-         String p="";
+         String p=" ";
         
         try {p = Acces.LectureExamen(jTextField1.getText(),jTextField2.getText(),s);
         } 
