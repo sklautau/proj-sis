@@ -1,5 +1,7 @@
 package NoyauFonctionnel;
 
+import static java.lang.Math.random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -18,6 +20,15 @@ public class Patient {
     
     public Patient(DICOM id, String nom, String prenom, Date date, String adresse){
         this.id=id;
+        this.nom=nom;
+        this.prenom=prenom;
+        this.datenais=date;
+        this.adresse=adresse;
+    }
+    
+    public Patient(String nom, String prenom, Date date, String adresse){
+        double m=Math.random();
+        id=new DICOM();
         this.nom=nom;
         this.prenom=prenom;
         this.datenais=date;
