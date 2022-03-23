@@ -10,6 +10,7 @@ import NoyauFonctionnel.TypeImagerie;
 import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Genre;
 import NoyauFonctionnel.Acces;
+import NoyauFonctionnel.Session;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -25,7 +26,9 @@ public class AjouterExamen extends javax.swing.JFrame {
     /**
      * Creates new form Create_DMR
      */
-    public AjouterExamen() {
+    public static Session s = new Session("","");
+    public AjouterExamen( Session current) {
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -258,7 +261,7 @@ public class AjouterExamen extends javax.swing.JFrame {
         t=t.getTypeImagerie(type);
     Examen exam=new Examen(dicom,date,jTextField2.getText(),t,jTextArea1.getText(),Integer.valueOf(jTextField6.getText()));
         
-    Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau dmr est enregistré)
+    Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau dmr est enregistré)
 
     //on récupère la taille de l'écran
     Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -270,7 +273,7 @@ public class AjouterExamen extends javax.swing.JFrame {
     appel.setLocationRelativeTo(null);
     dispose();
     try {
-            Acces.AjoutExamen(exam);
+            Acces.AjoutExamen(exam,s);
     }   catch (SQLException ex) { 
             Logger.getLogger(AjouterExamen.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -300,7 +303,7 @@ public class AjouterExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-          AfficheExamen appel = new AfficheExamen();  //pour passer à la fenêtre Afficher Examen
+          AfficheExamen appel = new AfficheExamen(s);  //pour passer à la fenêtre Afficher Examen
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -346,7 +349,8 @@ public class AjouterExamen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AjouterExamen().setVisible(true);
+                AjouterExamen a = new AjouterExamen(s);
+                a.setVisible(true);
             }
         });
     }

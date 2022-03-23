@@ -10,6 +10,7 @@ import NoyauFonctionnel.Patient;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import NoyauFonctionnel.Acces;
+import NoyauFonctionnel.Session;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +23,9 @@ public class AjouterPatient extends javax.swing.JFrame {
     /**
      * Creates new form AjouterPatient
      */
-    public AjouterPatient() {
+    public static Session s = new Session("","");
+    public AjouterPatient(Session current) {
+        s=current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -198,7 +201,7 @@ public class AjouterPatient extends javax.swing.JFrame {
 
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre DAffiche_Patients (retour)
+        Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre DAffiche_Patients (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -224,7 +227,7 @@ public class AjouterPatient extends javax.swing.JFrame {
     Date date = new Date(Integer.valueOf(part3),Integer.valueOf(part2),Integer.valueOf(part1));
     Patient p=new Patient(id,jTextField1.getText(),jTextField2.getText(),date,jTextField7.getText());
         
-    Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau patient est enregistré)
+    Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau patient est enregistré)
 
     //on récupère la taille de l'écran
     Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -237,7 +240,7 @@ public class AjouterPatient extends javax.swing.JFrame {
     dispose();
     getPatientString();
     try {
-            Acces.AjoutPatient(p);
+            Acces.AjoutPatient(p,s);
     } 
     catch (SQLException ex) {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
@@ -299,7 +302,7 @@ public class AjouterPatient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AjouterPatient().setVisible(true);
+                new AjouterPatient(s).setVisible(true);
             }
         });
     }

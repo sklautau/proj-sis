@@ -4,6 +4,7 @@
  */
 package Interface;
 
+import NoyauFonctionnel.Session;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -12,11 +13,12 @@ import java.awt.Toolkit;
  * @author Pauline KIEFER
  */
 public class AfficheExamen extends javax.swing.JFrame {
-
+   public static Session s = new Session("","");
     /**
      * Creates new form AfficheExamen
      */
-    public AfficheExamen() {
+    public AfficheExamen( Session current) {
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -178,7 +180,7 @@ public class AfficheExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR_interface (retour)
+        DMR_interface appel = new DMR_interface(s);  //pour passer à la fenêtre DMR_interface (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -193,7 +195,7 @@ public class AfficheExamen extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (ConnexionInterface.getDroitDeCreation()==true){
-            AjouterExamen appel = new AjouterExamen();  //pour passer à la fenêtre ajouter examen 
+            AjouterExamen appel = new AjouterExamen(s);  //pour passer à la fenêtre ajouter examen 
 
             //on récupère la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -268,7 +270,7 @@ public class AfficheExamen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AfficheExamen().setVisible(true);
+                new AfficheExamen(s).setVisible(true);
             }
         });
     }
