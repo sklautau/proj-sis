@@ -194,7 +194,7 @@ public class RechercheExamen extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-         String p="";
+         String p=" ";
         
         try {p = Acces.LectureExamen(jTextField1.getText(),jTextField2.getText(),s);
         } 
@@ -203,13 +203,14 @@ public class RechercheExamen extends javax.swing.JFrame {
         }
         
         
-        AfficheExamen appel = new AfficheExamen(s,p);  //pour passer à la fenêtre DMR_interface
+        AfficheExamen appel = new AfficheExamen(s,p);  //pour passer à la fenêtre afficheExamen
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
 
         //on place la fenêtre au milieu
         appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);       
+        
         appel.setVisible(true);
         appel.setLocationRelativeTo(null);
         dispose();
