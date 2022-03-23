@@ -203,7 +203,7 @@ public class RechercheExamen extends javax.swing.JFrame {
         }
         
         
-        Affiche_Patients appel = new Affiche_Patients(p,s);  //pour passer à la fenêtre DMR_interface
+        AfficheExamen appel = new AfficheExamen(s,p);  //pour passer à la fenêtre DMR_interface
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();

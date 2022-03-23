@@ -17,9 +17,16 @@ public class AfficheExamen extends javax.swing.JFrame {
     /**
      * Creates new form AfficheExamen
      */
-    public AfficheExamen( Session current) {
+   public AfficheExamen(Session current) {
+        s= current;
+        initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
+    public AfficheExamen( Session current,String txt) {
         s = current;
         initComponents();
+        jTextArea1.setText(txt);
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
