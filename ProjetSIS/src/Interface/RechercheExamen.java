@@ -100,6 +100,11 @@ public class RechercheExamen extends javax.swing.JFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANGIOCTSCANNER", "ANGIOIRM", "ANDIODIGITALISEE", "ARTHROSCANNER", "BIOPSIESEIN", "BIOPSIEFLUOROSCANNER", "CHOLANGIOIRM", "COLONLAVEMENT", "CTCOLONOGRAPHIE", "CTCORONOGRAPHIE", "CTSCANNERVOLUMIQUE", "CYSTOGRAPHIESUSPUBIENNE", "DEFECOIRM", "DENTASCANNER", "ECHOGRAPHIEREFLUXPEDIATRIQUE", "ECHOGRAPHIEDOPPLER", "ECHOGRAPHIE", "ENTEROCTSCANNER", "HYSTEROGRAPHIE", "INFILTRATIONINTERAPOPHYSAIRE", "INFILTRATIONPERIRADICULAIRE", "IRM", "MAMMOTEST", "OEDTRANSIT", "OSTEODENSITOMETRIE", "PELVIMETRIE", "PONCTIONTHYROIDE", "RADIOLOGIECONVENTIONNELLE", "SENOLOGIE", "UROGRAPHIEIV" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +124,7 @@ public class RechercheExamen extends javax.swing.JFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                                    .addComponent(jTextField2)
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(242, 242, 242)
@@ -220,6 +225,10 @@ public class RechercheExamen extends javax.swing.JFrame {
         appel.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
  
       
     /**
