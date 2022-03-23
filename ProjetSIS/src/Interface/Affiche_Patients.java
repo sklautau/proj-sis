@@ -251,7 +251,11 @@ public class Affiche_Patients extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        DMR_interface appel = new DMR_interface(s);  //pour passer à la fenêtre Affiche_Patients (retour)
+        String k = jTextArea1.getText();
+        String[] parts = k.split("\n");
+        k= parts[0];
+        String[] parts2 = k.split(" ");
+        DMR_interface appel = new DMR_interface(s,parts2[2]);  //pour passer à la fenêtre Affiche_Patients (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();

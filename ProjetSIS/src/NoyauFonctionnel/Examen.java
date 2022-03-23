@@ -13,6 +13,7 @@ package NoyauFonctionnel;
  */
 public class Examen {
     private DICOM id;
+    private String nom;
     private Date date;
     private String nomDocteur;
     private TypeImagerie typeExamen;
@@ -20,8 +21,9 @@ public class Examen {
     private int PACScode;
     private boolean dmrpapier;
     
-    public Examen(DICOM id,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
+    public Examen(DICOM id,String nom,Date date, String nomDocteur, TypeImagerie typeExamen, String compteRendu, int PACScode){
         this.id=id;
+        this.nom=nom;
         this.date=date;
         this.nomDocteur=nomDocteur;
         this.typeExamen=typeExamen;
@@ -101,5 +103,12 @@ public class Examen {
             s+=PACScode;
         }
         return s;
+    }
+
+    /**
+     * @return the nom
+     */
+    public String getNom() {
+        return nom;
     }
 }

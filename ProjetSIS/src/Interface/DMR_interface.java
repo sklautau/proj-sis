@@ -19,7 +19,7 @@ public class DMR_interface extends javax.swing.JFrame {
      * Creates new form DMR
      */
     public static Session s = new Session("","");
-    
+    public static String k = new String("");
     public DMR_interface() {
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -37,6 +37,14 @@ public class DMR_interface extends javax.swing.JFrame {
     public DMR_interface(String t) {
         initComponents();
         jTextArea2.setText(t);
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
+     //nouveau constructeur
+    public DMR_interface(Session current,String k) {
+        s = current;
+        this.k = k;
+        initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
@@ -140,7 +148,7 @@ public class DMR_interface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         RechercheExamen appel;  //pour passer à la fenêtre Recherche examen 
-        appel = new RechercheExamen(s);
+        appel = new RechercheExamen(s,k);
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -168,7 +176,7 @@ public class DMR_interface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        AjouterExamen appel = new AjouterExamen(s);  //pour passer à la fenêtre Affiche_Patients (retour)
+        AjouterExamen appel = new AjouterExamen(s,k);  //pour passer à la fenêtre Affiche_Patients (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();

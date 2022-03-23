@@ -27,6 +27,14 @@ public class AjouterExamen extends javax.swing.JFrame {
      * Creates new form Create_DMR
      */
     public static Session s = new Session("","");
+    public static String k = "";
+    public AjouterExamen( Session current,String k) {
+        s = current;
+        this.k = k;
+        initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
     public AjouterExamen( Session current) {
         s = current;
         initComponents();
@@ -214,7 +222,7 @@ public class AjouterExamen extends javax.swing.JFrame {
         String type=jComboBox1.getSelectedItem().toString();
         TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
         t=t.getTypeImagerie(type);
-    Examen exam=new Examen(dicom,date,jTextField2.getText(),t,jTextArea1.getText(),Integer.valueOf(jTextField6.getText()));
+    Examen exam=new Examen(dicom,k,date,jTextField2.getText(),t,jTextArea1.getText(),Integer.valueOf(jTextField6.getText()));
         
     Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre Affiche_Patients (une fois que le nouveau dmr est enregistré)
 

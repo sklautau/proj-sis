@@ -72,32 +72,33 @@ public static String LecturePatient(String nom,String prenom,String datenais, Se
 public static void AjoutExamen(Examen examen, Session s) throws SQLException {
 RequeteType requeteType = new RequeteType(s);
 
-String update ="dicom,dateexam,ph,type,cr,pacs";
+String update ="dicom,k,dateexam,ph,type,cr,pacs";
 PreparedStatement prepupdate = requeteType.insert(tableexam, update);
 prepupdate.setString(1, examen.getId());
-prepupdate.setString(2, examen.getDate());
-prepupdate.setString(3, examen.getNomDocteur());
-prepupdate.setString(4, examen.getTypeExamen().getTypeImagerie());
-prepupdate.setString(5, examen.getCompteRendu());
-prepupdate.setString(6, examen.getCodePACS());
+prepupdate.setString(2, examen.getNom());
+prepupdate.setString(3, examen.getDate());
+prepupdate.setString(4, examen.getNomDocteur());
+prepupdate.setString(5, examen.getTypeExamen().getTypeImagerie());
+prepupdate.setString(6, examen.getCompteRendu());
+prepupdate.setString(7, examen.getCodePACS());
 prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static String LectureExamen(String type,String dateexam, Session s) throws SQLException {
+public static String LectureExamen(String type,String dateexam, Session s,String k) throws SQLException {
 RequeteType requeteType = new RequeteType(s);
-            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'";
+            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'AND prenom = '"+k+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             Examen e = null;
             int temp = 0;
             while (resultat.next()) {
                 String id = resultat.getString(1);
-                //String dateexam2 = resultat.getString(2);
-                String nomdocteur = resultat.getString(3);
-                //String type = resultat.getString(4);
-                String compterendu = resultat.getString(5);   
-                String PACS = resultat.getString(6);
+                //String dateexam2 = resultat.getString(3);
+                String nomdocteur = resultat.getString(4);
+                //String type = resultat.getString(5);
+                String compterendu = resultat.getString(6);   
+                String PACS = resultat.getString(7);
                 Date date=toDate(dateexam);
                 TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
                 t=t.getTypeImagerie(type);
@@ -108,7 +109,7 @@ RequeteType requeteType = new RequeteType(s);
                 else{
                    temp =Integer.valueOf(PACS);
                 }
-                e = new Examen(ide,date, nomdocteur, t, compterendu, temp);
+                e = new Examen(ide,k,date, nomdocteur, t, compterendu, temp);
             }
             requeteType.close();
             return(e.toString());

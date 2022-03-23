@@ -24,7 +24,15 @@ public class RechercheExamen extends javax.swing.JFrame {
     /**
      * Creates new form RechercheExamen
      */
+    public static String k = "";
     public static Session s = new Session("","");
+    public RechercheExamen(Session current,String k) {
+        s = current;
+        this.k = k;
+        initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
     public RechercheExamen(Session current) {
         s = current;
         initComponents();
@@ -196,7 +204,7 @@ public class RechercheExamen extends javax.swing.JFrame {
 
          String p=" ";
         
-        try {p = Acces.LectureExamen(jTextField1.getText(),jTextField2.getText(),s);
+        try {p = Acces.LectureExamen(jTextField1.getText(),jTextField2.getText(),s,k);
         } 
         catch (SQLException ex) {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);

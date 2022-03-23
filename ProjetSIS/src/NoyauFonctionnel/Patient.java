@@ -71,7 +71,7 @@ public class Patient {
         s+="prénom : ";
         s+=prenom+"\n";
         s+="date de naissance : ";
-        s+=datenais+"\n";
+        s+=datenais;
         s+="adresse : ";
         s+=adresse;
         return s;
