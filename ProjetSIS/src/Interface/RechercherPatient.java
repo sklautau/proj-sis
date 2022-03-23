@@ -185,7 +185,7 @@ public class RechercherPatient extends javax.swing.JFrame {
         }
         
         
-        DMR_interface appel = new DMR_interface(p);  //pour passer à la fenêtre DMR_interface
+        Affiche_Patients appel = new Affiche_Patients(p,s);  //pour passer à la fenêtre DMR_interface
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();

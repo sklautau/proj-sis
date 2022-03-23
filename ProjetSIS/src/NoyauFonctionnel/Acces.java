@@ -45,7 +45,7 @@ requeteType.close();
 public static String LecturePatient(String nom,String prenom,String datenais, Session s) throws SQLException {
 
             RequeteType requeteType = new RequeteType();
-            String query = "SELECT * FROM " + tablepat + " where id = '" + nom +"'AND dateexam ='"+datenais+"'";
+            String query = "SELECT * FROM " + tablepat + " where nom = '" + nom +"'AND prenom = '"+prenom+"'";//AND datenais ='"+datenais+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
@@ -59,6 +59,7 @@ public static String LecturePatient(String nom,String prenom,String datenais, Se
                 Date date=toDate(datenais);
                 DICOM idp = new DICOM(""+id);
                 p = new Patient(idp, nom, prenom, date, adresse);
+                System.out.println(p);
             }
             requeteType.close();
             return p.toString();
