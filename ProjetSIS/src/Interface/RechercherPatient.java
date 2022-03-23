@@ -5,6 +5,7 @@
 package Interface;
 
 import NoyauFonctionnel.Acces;
+import NoyauFonctionnel.Session;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.sql.SQLException;
@@ -20,7 +21,9 @@ public class RechercherPatient extends javax.swing.JFrame {
     /**
      * Creates new form RechercherPatient
      */
-    public RechercherPatient() {
+    public static Session s = new Session("","");
+    public RechercherPatient(Session current) {
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -158,7 +161,7 @@ public class RechercherPatient extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre DAffiche_Patients (retour)
+        Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre DAffiche_Patients (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -175,7 +178,7 @@ public class RechercherPatient extends javax.swing.JFrame {
         
         String p="";
         
-        try {p = Acces.LecturePatient(jTextField1.getText(),jTextField2.getText(),jTextField3.getText());
+        try {p = Acces.LecturePatient(jTextField1.getText(),jTextField2.getText(),jTextField3.getText(),s);
         } 
         catch (SQLException ex) {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
@@ -248,7 +251,7 @@ public static void main(String args[]) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RechercherPatient().setVisible(true);
+                new RechercherPatient(s).setVisible(true);
             }
         });
     }

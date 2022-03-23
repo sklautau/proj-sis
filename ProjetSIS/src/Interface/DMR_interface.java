@@ -4,6 +4,7 @@
  */
 package Interface;
 
+import NoyauFonctionnel.Session;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -11,12 +12,15 @@ import java.awt.Toolkit;
  *
  * @author Pauline KIEFER
  */
+
 public class DMR_interface extends javax.swing.JFrame {
 
     /**
      * Creates new form DMR
      */
-     public DMR_interface() {
+    public static Session s = new Session("","");
+     public DMR_interface(Session current) {
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -118,7 +122,7 @@ public class DMR_interface extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         RechercheExamen appel;  //pour passer à la fenêtre Recherche examen 
-        appel = new RechercheExamen();
+        appel = new RechercheExamen(s);
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -132,7 +136,7 @@ public class DMR_interface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (retour)
+        Affiche_Patients appel = new Affiche_Patients(s);  //pour passer à la fenêtre Affiche_Patients (retour)
 
         //on récupère la taille de l'écran
         Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -185,7 +189,7 @@ public static void main(String args[]) {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DMR_interface().setVisible(true);
+                new DMR_interface(s).setVisible(true);
             }
         });
     }

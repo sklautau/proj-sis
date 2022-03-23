@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 import java.sql.*;
 
 public class RequeteType {
-    private String url;
+    private String url = "jdbc:mysql://localhost:3306/sir";
     private String user;
     private String password;
     private Connection conn = null;
@@ -33,8 +33,7 @@ public class RequeteType {
          //   Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public RequeteType(String url, String user, String password) throws SQLException {
-        this.url = url;
+    public RequeteType(String user, String password) throws SQLException {
         this.user = user;
         this.password = password;
         try {
@@ -51,7 +50,23 @@ public class RequeteType {
         }
     return;
 }
-        
+    public RequeteType(Session s) throws SQLException {
+        this.user = s.getUser();
+        this.password = s.getMdp();
+        try {
+            //Class.forName("com.mysql.jdbc.driver") ;
+            conn = DriverManager.getConnection(url, user, password);
+            SQLWarningsExceptions.printWarnings(conn);
+        }
+        catch( SQLException se ) {
+            // Print information about SQL exceptions
+            SQLWarningsExceptions.printExceptions(se);
+            return;
+        //} catch (ClassNotFoundException ex) {
+         //   Logger.getLogger(RequeteType.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    return;
+}    
 
      public PreparedStatement insert(String table, String champ) throws SQLException {
      

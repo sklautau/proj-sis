@@ -18,12 +18,12 @@ private static final String tableexam = "EXAMEN";
 private static final String adresseBD = "jdbc:mysql://localhost:3306/sir";
 
 public static void Identification(String utilisateur,String motDePasse) throws SQLException {
-    RequeteType requeteType = new RequeteType(adresseBD,utilisateur,motDePasse);
+    RequeteType requeteType = new RequeteType(utilisateur,motDePasse);
 }
 
-public static void AjoutPatient(Patient P) throws SQLException {
+public static void AjoutPatient(Patient P, Session s) throws SQLException {
 
-RequeteType requeteType = new RequeteType();
+RequeteType requeteType = new RequeteType(s);
 String Type = P.getType();
 String Passif =P.getPassif();
 String id =""+Passif+""+Type;
@@ -42,7 +42,7 @@ requeteType.close();
 
 
 
-public static String LecturePatient(String nom,String prenom,String datenais) throws SQLException {
+public static String LecturePatient(String nom,String prenom,String datenais, Session s) throws SQLException {
 
             RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tablepat + " where id = '" + nom +"'AND dateexam ='"+datenais+"'";
@@ -65,7 +65,7 @@ public static String LecturePatient(String nom,String prenom,String datenais) th
 
 }
 
-public static void AjoutExamen(Examen examen) throws SQLException {
+public static void AjoutExamen(Examen examen, Session s) throws SQLException {
 RequeteType requeteType = new RequeteType();
 
 String update ="dicom,dateexam,ph,type,cr,pacs";
@@ -80,7 +80,7 @@ prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static void LectureExamen(String type,String dateexam) throws SQLException {
+public static void LectureExamen(String type,String dateexam, Session s) throws SQLException {
 RequeteType requeteType = new RequeteType();
             String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
             System.out.println(query);
@@ -104,8 +104,8 @@ RequeteType requeteType = new RequeteType();
             e.toString();
 }
 
-public static Date toDate(String s){
-        String[] parts = s.split("/");
+public static Date toDate(String x){
+        String[] parts =x.split("/");
         String part1 = parts[0];
         String part2 = parts[1];
         String part3 = parts[2];

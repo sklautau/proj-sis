@@ -9,6 +9,7 @@ import NoyauFonctionnel.Date;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import NoyauFonctionnel.Medecin;
+import NoyauFonctionnel.Session;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -152,20 +153,10 @@ public class ConnexionInterface extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String login = jTextField1.getText();
         String mdp = jPasswordField1.getText();
-        try {
-
-            // Create an temporary file
-            File fileTemp = File.createTempFile("temp_data", ".txt");
-            FileWriter W = new FileWriter(fileTemp);
-            W.write(login);
-            W.write(mdp);
-            // A DEPLACER SUR UNE METHODE
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Session current = new Session(login,mdp);
         try {
             Acces.Identification(login,mdp);
-            Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
+            Affiche_Patients appel = new Affiche_Patients(current);  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -189,10 +180,10 @@ public class ConnexionInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (date.dateDuJour().toString().equals(date)){
+      /**  if (date.dateDuJour().toString().equals(date)){
                 droitDeCreation=false;
                 System.out.println("message"); //pour les tests à enlever après
-                Affiche_Patients appel = new Affiche_Patients();  //pour passer à la fenêtre Affiche_Patients (valider)
+                Affiche_Patients appel = new Affiche_Patients(current);  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -207,6 +198,7 @@ public class ConnexionInterface extends javax.swing.JFrame {
             else {
                 System.out.println("ERREUR : date de visite non conforme.");
             }
+      **/
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

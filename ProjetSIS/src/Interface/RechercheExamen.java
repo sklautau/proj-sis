@@ -5,6 +5,7 @@
 package Interface;
 
 import NoyauFonctionnel.Date;
+import NoyauFonctionnel.Session;
 import NoyauFonctionnel.TypeImagerie;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -18,7 +19,9 @@ public class RechercheExamen extends javax.swing.JFrame {
     /**
      * Creates new form RechercheExamen
      */
-    public RechercheExamen() {
+    public static Session s = new Session("","");
+    public RechercheExamen(Session current) {
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
@@ -172,7 +175,7 @@ public class RechercheExamen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DMR_interface appel = new DMR_interface();  //pour passer à la fenêtre DMR 
+        DMR_interface appel = new DMR_interface(s);  //pour passer à la fenêtre DMR 
         
 
             //on récupere la taille de l'écran
@@ -189,7 +192,7 @@ public class RechercheExamen extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
          AfficheExamen appel;  //pour passer à la fenêtre DMR 
-         appel = new AfficheExamen();
+         appel = new AfficheExamen(s);
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -233,7 +236,7 @@ public class RechercheExamen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RechercheExamen().setVisible(true);
+                new RechercheExamen(s).setVisible(true);
             }
         });
     }

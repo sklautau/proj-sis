@@ -6,6 +6,7 @@ package Interface;
 
 import NoyauFonctionnel.DMR;
 import NoyauFonctionnel.Patient;
+import NoyauFonctionnel.Session;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -18,13 +19,16 @@ public class Affiche_Patients extends javax.swing.JFrame {
     /**
      * Creates new form Affiche_Patients
      */
-    public Affiche_Patients() {
+    public static Session s = new Session("","");
+    public Affiche_Patients(Session current) {
+        s= current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
     }
     
-    public Affiche_Patients(String t) {
+    public Affiche_Patients(String t, Session current) {
+        s = current;
         initComponents();
         jTextArea1.setText(t);
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
@@ -157,7 +161,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
             }*/
         //A COMPLETER EN FONCTION DE LA BASE DE DONNEES
         DMR_interface appel;  //pour passer à la fenêtre connexion (bouton retour)
-        appel = new DMR_interface();
+        appel = new DMR_interface(s);
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -172,7 +176,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         if (ConnexionInterface.getDroitDeCreation()==true){
-            AjouterPatient appel = new AjouterPatient();  //pour passer à la fenêtre ajouter patient 
+            AjouterPatient appel = new AjouterPatient(s);  //pour passer à la fenêtre ajouter patient 
 
             //on récupère la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -206,7 +210,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         RechercherPatient appel;  //pour passer à la fenêtre DMR (quand clique sur un patient)
-        appel = new RechercherPatient();
+        appel = new RechercherPatient(s);
 
             //on récupere la taille de l'écran
             Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -291,7 +295,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Affiche_Patients().setVisible(true);
+                new Affiche_Patients(s).setVisible(true);
             }
         });
     }
