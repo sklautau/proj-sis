@@ -40,11 +40,11 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jButton6" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jButton6" alignment="0" min="-2" pref="388" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton2" pref="182" max="32767" attributes="0"/>
+                              <Component id="jButton2" min="-2" pref="182" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="jButton5" pref="135" max="32767" attributes="0"/>
+                              <Component id="jButton5" min="-2" pref="135" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                   <Component id="jButton5" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+              <Component id="jButton6" linkSize="3" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
