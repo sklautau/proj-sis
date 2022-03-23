@@ -20,6 +20,7 @@ public class RequeteType {
     private PreparedStatement prepstate = null;
     private ResultSet result = null;
     private Statement state = null;
+    
     public RequeteType() throws SQLException {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/sir", "admin", "macarel");

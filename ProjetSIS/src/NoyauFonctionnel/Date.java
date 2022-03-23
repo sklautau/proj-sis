@@ -212,6 +212,14 @@ public class Date {
         s+=annee+"\n";
         s+="Mois : "+mois+"\n";
         s+="Jour : "+jour+"\n";
+        return s;
+    }
+    
+    public String toStringAvecHeure(){
+        String s="Année : ";
+        s+=annee+"\n";
+        s+="Mois : "+mois+"\n";
+        s+="Jour : "+jour+"\n";
         s+="Heure : "+heure+"h"+minute+"\n";
         return s;
     }
