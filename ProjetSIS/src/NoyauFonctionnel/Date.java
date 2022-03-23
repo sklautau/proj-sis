@@ -208,10 +208,7 @@ public class Date {
     }
     
     public String toString(){
-        String s="Année : ";
-        s+=annee+"\n";
-        s+="Mois : "+mois+"\n";
-        s+="Jour : "+jour+"\n";
+        String s=jour+"/"+mois+"/"+annee+"\n";
         return s;
     }
     
