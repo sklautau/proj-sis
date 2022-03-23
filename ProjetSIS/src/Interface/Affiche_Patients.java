@@ -21,7 +21,7 @@ public class Affiche_Patients extends javax.swing.JFrame {
      */
     public static Session s = new Session("","");
     public Affiche_Patients(Session current) {
-        s= current;
+        s = current;
         initComponents();
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);

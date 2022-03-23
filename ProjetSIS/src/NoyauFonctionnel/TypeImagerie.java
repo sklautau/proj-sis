@@ -136,6 +136,9 @@ public enum TypeImagerie {
                 else if (type.equals("SENOLOGIE")){
                     t=t.SENOLOGIE;
                 }
+                else if (type.equals("Angio CT Scanner")){
+                    t=t.ANGIOCTSCANNER;
+                }
                 else {
                     t=t.UROGRAPHIEIV;
                 }

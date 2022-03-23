@@ -86,13 +86,14 @@ requeteType.close();
 
 public static String LectureExamen(String type,String dateexam, Session s) throws SQLException {
 RequeteType requeteType = new RequeteType(s);
-            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
+            String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             Examen e = null;
+            int temp = 0;
             while (resultat.next()) {
                 String id = resultat.getString(1);
-                //String dateexam = resultat.getString(2);
+                //String dateexam2 = resultat.getString(2);
                 String nomdocteur = resultat.getString(3);
                 //String type = resultat.getString(4);
                 String compterendu = resultat.getString(5);   
@@ -101,7 +102,13 @@ RequeteType requeteType = new RequeteType(s);
                 TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
                 t=t.getTypeImagerie(type);
                 DICOM ide = new DICOM(""+id);
-                e = new Examen(ide,date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
+                if (PACS.equals("false")){
+                    temp = 0;
+                }
+                else{
+                   temp =Integer.valueOf(PACS);
+                }
+                e = new Examen(ide,date, nomdocteur, t, compterendu, temp);
             }
             requeteType.close();
             return(e.toString());
