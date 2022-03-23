@@ -146,91 +146,91 @@ public enum TypeImagerie {
     }
 public TypeImagerie getTypeImagerie2(String type){
         TypeImagerie t=TypeImagerie.ANDIODIGITALISEE;
-        if (type.equals("ANGIOCTSCANNER")){
+        if (type.equals("Angio CT Scanner")){
                     t=t.ANGIOCTSCANNER;
                 }
-                else if (type.equals("Angio CT Scanner")){
+                else if (type.equals("Angio IRM")){
                     t=t.ANGIOIRM;
                 }
-                else if (type.equals("ANDIODIGITALISEE")){
+                else if (type.equals("Angiographie Digitalisée")){
                     t=t.ANDIODIGITALISEE;
                 }
-                else if (type.equals("ARTHROSCANNER")){
+                else if (type.equals("Arthroscanner")){
                     t=t.ARTHROSCANNER;
                 }
-                else if (type.equals("BIOPSIESEIN")){
+                else if (type.equals("Biopsie du sein")){
                     t=t.BIOPSIESEIN;
                 }
-                else if (type.equals("BIOPSIEFLUOROSCANNER")){
+                else if (type.equals("Biopsie sous fluoroscanner")){
                     t=t.BIOPSIEFLUOROSCANNER;
                 }
-                else if (type.equals("CHOLANGIOIRM")){
+                else if (type.equals("Cholangio IRM")){
                     t=t.CHOLANGIOIRM;
                 }
-                else if (type.equals("COLONLAVEMENT")){
+                else if (type.equals("Colon par lavement")){
                     t=t.COLONLAVEMENT;
                 }
-                else if (type.equals("CTCOLONOGRAPHIE")){
+                else if (type.equals("CT Colonographie")){
                     t=t.CTCOLONOGRAPHIE;
                 }
-                else if (type.equals("CTCORONOGRAPHIE")){
+                else if (type.equals("CT Coronarographie")){
                     t=t.CTCORONOGRAPHIE;
                 }
-                else if (type.equals("CTSCANNERVOLUMIQUE")){
+                else if (type.equals("CT Scanner Volumique ou multibarrette")){
                    t=t.CTSCANNERVOLUMIQUE; 
                 }
-                else if (type.equals("CYSTOGRAPHIESUSPUBIENNE")){
+                else if (type.equals("Cystographie sus-pubienne")){
                     t=t.CYSTOGRAPHIESUSPUBIENNE;
                 }
-                else if (type.equals("DEFECOIRM")){
+                else if (type.equals("Defeco IRM")){
                     t=t.DEFECOIRM;
                 }
-                else if (type.equals("DentascannerDENTASCANNER")){
+                else if (type.equals("Dentascanner")){
                     t=t.DENTASCANNER;
                 }
-                else if (type.equals("ECHOGRAPHIEREFLUXPEDIATRIQUE")){
+                else if (type.equals("Echographie de reflux pédiatrique")){
                     t=t.ECHOGRAPHIEREFLUXPEDIATRIQUE;
                 }
-                else if (type.equals("ECHOGRAPHIEDOPPLER")){
+                else if (type.equals("Echographie Döppler")){
                     t=t.ECHOGRAPHIEDOPPLER;
                 }
-                else if (type.equals("ECHOGRAPHIE")){
+                else if (type.equals("Echographie")){
                     t=t.ECHOGRAPHIE;
                 }
-                else if (type.equals("ENTEROCTSCANNER")){
+                else if (type.equals("Entero CT Scanner")){
                     t=t.ENTEROCTSCANNER;
                 }
-                else if (type.equals("HYSTEROGRAPHIE")){
+                else if (type.equals("Hysterographie")){
                     t=t.HYSTEROGRAPHIE;
                 }
-                else if (type.equals("INFILTRATIONINTERAPOPHYSAIRE")){
+                else if (type.equals("Infiltration Interapophysaire")){
                    t=t.INFILTRATIONINTERAPOPHYSAIRE; 
                 }
-                else if (type.equals("INFILTRATIONPERIRADICULAIRE")){
+                else if (type.equals("Infiltration Periradiculaire sous fluoroscanner")){
                    t=t.INFILTRATIONPERIRADICULAIRE; 
                 }
                 else if (type.equals("IRM")){
                    t=t.IRM; 
                 }
-                else if (type.equals("MAMMOTEST")){
+                else if (type.equals("Mammotest")){
                     t=t.MAMMOTEST;
                 }
-                else if (type.equals("OEDTRANSIT")){
+                else if (type.equals("OED & transit")){
                     t=t.OEDTRANSIT;
                 }
-                else if (type.equals("OSTEODENSITOMETRIE")){
+                else if (type.equals("Ostéodensitométrie")){
                    t=t.OSTEODENSITOMETRIE; 
                 }
-                else if (type.equals("PELVIMETRIE")){
+                else if (type.equals("Pelvimétrie")){
                     t=t.PELVIMETRIE;
                 }
-                else if (type.equals("PONCTIONTHYROIDE")){
+                else if (type.equals("Ponction de la thyroïde")){
                     t=t.PONCTIONTHYROIDE;
                 }
-                else if (type.equals("RADIOLOGIECONVENTIONNELLE")){
+                else if (type.equals("Radiologie conventionnelle")){
                     t=t.RADIOLOGIECONVENTIONNELLE;
                 }
-                else if (type.equals("SENOLOGIE")){
+                else if (type.equals("Sénologie")){
                     t=t.SENOLOGIE;
                 }
                 else {
