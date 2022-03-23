@@ -19,8 +19,9 @@ private static final String tablesejour = "SEJOUR";
 private static final String tablemedecin = "MEDECIN";
 private static final String adresseBD = "jdbc:mysql://localhost:3306/sir";
 
-public static void Identification(String utilisateur,String motDePasse) throws SQLException {
+public static Connection Identification(String utilisateur,String motDePasse) throws SQLException {
     RequeteType requeteType = new RequeteType(utilisateur,motDePasse);
+    return requeteType.getConn();
 }
 
 public static void AjoutPatient(Patient P, Session s) throws SQLException {
@@ -88,7 +89,6 @@ RequeteType requeteType = new RequeteType(s);
             String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
-            System.out.println("test");
             Examen e = null;
             while (resultat.next()) {
                 String id = resultat.getString(1);
@@ -106,26 +106,22 @@ RequeteType requeteType = new RequeteType(s);
             requeteType.close();
             e.toString();
 }
-public static String Sejour(String CPS, Session s) throws SQLException {
+public static String Sejour(String CPS) throws SQLException {
 
-            RequeteType requeteType = new RequeteType(s);
+            RequeteType requeteType = new RequeteType(CPS,"macarel");
             String query = "SELECT * FROM " + tablesejour + " where idsej = '" + CPS +"'"; //AND datenais ='"+datenais+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
             System.out.println("test");
             Patient p = null;
+            String date ="";
             while (resultat.next()) {
-                
-                String date = resultat.getString(2);
-                
-  
-                //Date date=toDate(datenais);
-               // DICOM idp = new DICOM(""+id);
-               // p = new Patient(idp, nom, prenom, date, adresse);
-               // System.out.println(p);
+                String d = resultat.getString(2);
+                date=d;
             }
+           
             requeteType.close();
-            return p.toString();
+            return date;
 
 }
 public static Date toDate(String x){

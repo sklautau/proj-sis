@@ -82,7 +82,7 @@ public class RequeteType {
         }
         query = query + "?) ";
         System.out.println(query);
-        prepstate = this.conn.prepareStatement(query);
+        prepstate = this.getConn().prepareStatement(query);
         return prepstate;
     }
      public void close() {
@@ -94,9 +94,9 @@ public class RequeteType {
             } catch (SQLException ignore) {
             }
         }
-        if (conn != null) {
+        if (getConn() != null) {
             try {
-                conn.close();
+                getConn().close();
             } catch (SQLException ignore) {
             }
         }
@@ -104,7 +104,7 @@ public class RequeteType {
      public ResultSet select(String query) { //A REVOIR ! LA METHODE NE FONCTIONNE PAS
         try {
             //Création d'un objet statement 
-            state = this.conn.createStatement();
+            state = this.getConn().createStatement();
 
             //On execute la SQL Query
             result = state.executeQuery(query);
@@ -120,4 +120,7 @@ public class RequeteType {
     public void deconnexion(){
         this.conn = null;
     }   
+    public Connection getConn() {
+        return conn;
+    }
 }
