@@ -4,11 +4,16 @@
  */
 package Interface;
 
+import static Interface.RechercherPatient.s;
+import NoyauFonctionnel.Acces;
 import NoyauFonctionnel.Date;
 import NoyauFonctionnel.Session;
 import NoyauFonctionnel.TypeImagerie;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -191,18 +196,25 @@ public class RechercheExamen extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-         AfficheExamen appel;  //pour passer à la fenêtre DMR 
-         appel = new AfficheExamen(s);
+         String p="";
+        
+        try {p = Acces.LectureExamen(jTextField1.getText(),jTextField2.getText(),s);
+        } 
+        catch (SQLException ex) {
+            Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        Affiche_Patients appel = new Affiche_Patients(p,s);  //pour passer à la fenêtre DMR_interface
 
-            //on récupere la taille de l'écran
-            Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
+        //on récupère la taille de l'écran
+        Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
 
-            //on place la fenêtre au milieu
-            appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);
-
-            appel.setVisible(true);
-            appel.setLocationRelativeTo(null);
-            dispose();
+        //on place la fenêtre au milieu
+        appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);       
+        appel.setVisible(true);
+        appel.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
  
       

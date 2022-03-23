@@ -42,8 +42,7 @@ public class DICOM {
     
     public String toString(){
         String s;
-        s="type : "+type+"           ";
-        s+="passif : "+passif;
+        s=""+type+passif;
         return s;
     }
 

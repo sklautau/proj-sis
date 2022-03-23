@@ -84,7 +84,7 @@ prepupdate.executeUpdate();
 requeteType.close();
 }
 
-public static void LectureExamen(String type,String dateexam, Session s) throws SQLException {
+public static String LectureExamen(String type,String dateexam, Session s) throws SQLException {
 RequeteType requeteType = new RequeteType(s);
             String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
             System.out.println(query);
