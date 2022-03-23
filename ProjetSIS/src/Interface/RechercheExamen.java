@@ -210,6 +210,7 @@ public class RechercheExamen extends javax.swing.JFrame {
 
         //on place la fenêtre au milieu
         appel.setLocation((tailleEcran.width - appel.getSize().width) / 2, (tailleEcran.height - appel.getSize().height) / 2);       
+        
         appel.setVisible(true);
         appel.setLocationRelativeTo(null);
         dispose();
