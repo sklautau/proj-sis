@@ -19,6 +19,13 @@ public class DMR_interface extends javax.swing.JFrame {
      * Creates new form DMR
      */
     public static Session s = new Session("","");
+    
+    public DMR_interface() {
+        initComponents();
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((screen.width - this.getSize().width)/2,(screen.height - this.getSize().height)/2);
+    }
+    
      public DMR_interface(Session current) {
         s = current;
         initComponents();
