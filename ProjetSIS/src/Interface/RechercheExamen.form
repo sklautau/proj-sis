@@ -42,7 +42,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField2" pref="228" max="32767" attributes="0"/>
+                                  <Component id="jTextField2" max="32767" attributes="0"/>
                                   <Component id="jComboBox1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -139,37 +139,38 @@
     <Component class="javax.swing.JComboBox" name="jComboBox1">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="30">
-            <StringItem index="0" value="ANGIOCTSCANNER"/>
-            <StringItem index="1" value="ANGIOIRM"/>
-            <StringItem index="2" value="ANDIODIGITALISEE"/>
-            <StringItem index="3" value="ARTHROSCANNER"/>
-            <StringItem index="4" value="BIOPSIESEIN"/>
-            <StringItem index="5" value="BIOPSIEFLUOROSCANNER"/>
-            <StringItem index="6" value="CHOLANGIOIRM"/>
-            <StringItem index="7" value="COLONLAVEMENT"/>
-            <StringItem index="8" value="CTCOLONOGRAPHIE"/>
-            <StringItem index="9" value="CTCORONOGRAPHIE"/>
-            <StringItem index="10" value="CTSCANNERVOLUMIQUE"/>
-            <StringItem index="11" value="CYSTOGRAPHIESUSPUBIENNE"/>
-            <StringItem index="12" value="DEFECOIRM"/>
-            <StringItem index="13" value="DENTASCANNER"/>
-            <StringItem index="14" value="ECHOGRAPHIEREFLUXPEDIATRIQUE"/>
-            <StringItem index="15" value="ECHOGRAPHIEDOPPLER"/>
-            <StringItem index="16" value="ECHOGRAPHIE"/>
-            <StringItem index="17" value="ENTEROCTSCANNER"/>
-            <StringItem index="18" value="HYSTEROGRAPHIE"/>
-            <StringItem index="19" value="INFILTRATIONINTERAPOPHYSAIRE"/>
-            <StringItem index="20" value="INFILTRATIONPERIRADICULAIRE"/>
+          <StringArray count="31">
+            <StringItem index="0" value="Angio CT Scanner"/>
+            <StringItem index="1" value="Angio IRM"/>
+            <StringItem index="2" value="Angiographie Digitalis&#xe9;e"/>
+            <StringItem index="3" value="Arthroscanner"/>
+            <StringItem index="4" value="Biopsie du sein"/>
+            <StringItem index="5" value="Biopsie sous fluoroscanner"/>
+            <StringItem index="6" value="Cholangio IRM"/>
+            <StringItem index="7" value="Colon par lavement"/>
+            <StringItem index="8" value="CT Colonographie"/>
+            <StringItem index="9" value="CT Coronarographie"/>
+            <StringItem index="10" value="CT Scanner Volumique ou multibarrette"/>
+            <StringItem index="11" value="Cystographie sus-pubienne"/>
+            <StringItem index="12" value="Defeco IRM"/>
+            <StringItem index="13" value="Dentascanner"/>
+            <StringItem index="14" value="Echographie de reflux p&#xe9;diatrique"/>
+            <StringItem index="15" value="Echographie D&#xf6;ppler"/>
+            <StringItem index="16" value="Echographie"/>
+            <StringItem index="17" value="Entero CT Scanner"/>
+            <StringItem index="18" value="Hysterographie"/>
+            <StringItem index="19" value="Infiltration Interapophysaire"/>
+            <StringItem index="20" value=" Infiltration Periradiculaire sous fluoroscanner"/>
             <StringItem index="21" value="IRM"/>
-            <StringItem index="22" value="MAMMOTEST"/>
-            <StringItem index="23" value="OEDTRANSIT"/>
-            <StringItem index="24" value="OSTEODENSITOMETRIE"/>
-            <StringItem index="25" value="PELVIMETRIE"/>
-            <StringItem index="26" value="PONCTIONTHYROIDE"/>
-            <StringItem index="27" value="RADIOLOGIECONVENTIONNELLE"/>
-            <StringItem index="28" value="SENOLOGIE"/>
-            <StringItem index="29" value="UROGRAPHIEIV"/>
+            <StringItem index="22" value="Mammotest"/>
+            <StringItem index="23" value="OED &amp; transit"/>
+            <StringItem index="24" value="Ost&#xe9;odensitom&#xe9;trie"/>
+            <StringItem index="25" value="Pelvim&#xe9;trie"/>
+            <StringItem index="26" value="Ponction de la thyro&#xef;de"/>
+            <StringItem index="27" value="Radiologie conventionnelle"/>
+            <StringItem index="28" value="S&#xe9;nologie"/>
+            <StringItem index="29" value="Urographie IV"/>
+            <StringItem index="30" value=" "/>
           </StringArray>
         </Property>
       </Properties>

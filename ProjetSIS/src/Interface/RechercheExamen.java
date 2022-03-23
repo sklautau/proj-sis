@@ -99,7 +99,7 @@ public class RechercheExamen extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANGIOCTSCANNER", "ANGIOIRM", "ANDIODIGITALISEE", "ARTHROSCANNER", "BIOPSIESEIN", "BIOPSIEFLUOROSCANNER", "CHOLANGIOIRM", "COLONLAVEMENT", "CTCOLONOGRAPHIE", "CTCORONOGRAPHIE", "CTSCANNERVOLUMIQUE", "CYSTOGRAPHIESUSPUBIENNE", "DEFECOIRM", "DENTASCANNER", "ECHOGRAPHIEREFLUXPEDIATRIQUE", "ECHOGRAPHIEDOPPLER", "ECHOGRAPHIE", "ENTEROCTSCANNER", "HYSTEROGRAPHIE", "INFILTRATIONINTERAPOPHYSAIRE", "INFILTRATIONPERIRADICULAIRE", "IRM", "MAMMOTEST", "OEDTRANSIT", "OSTEODENSITOMETRIE", "PELVIMETRIE", "PONCTIONTHYROIDE", "RADIOLOGIECONVENTIONNELLE", "SENOLOGIE", "UROGRAPHIEIV" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Angio CT Scanner", "Angio IRM", "Angiographie Digitalisée", "Arthroscanner", "Biopsie du sein", "Biopsie sous fluoroscanner", "Cholangio IRM", "Colon par lavement", "CT Colonographie", "CT Coronarographie", "CT Scanner Volumique ou multibarrette", "Cystographie sus-pubienne", "Defeco IRM", "Dentascanner", "Echographie de reflux pédiatrique", "Echographie Döppler", "Echographie", "Entero CT Scanner", "Hysterographie", "Infiltration Interapophysaire", " Infiltration Periradiculaire sous fluoroscanner", "IRM", "Mammotest", "OED & transit", "Ostéodensitométrie", "Pelvimétrie", "Ponction de la thyroïde", "Radiologie conventionnelle", "Sénologie", "Urographie IV", " " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +119,7 @@ public class RechercheExamen extends javax.swing.JFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                                    .addComponent(jTextField2)
                                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(242, 242, 242)
