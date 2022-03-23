@@ -104,7 +104,7 @@ RequeteType requeteType = new RequeteType(s);
                 e = new Examen(ide,date, nomdocteur, t, compterendu, Integer.valueOf(PACS));
             }
             requeteType.close();
-            e.toString();
+            return(e.toString());
 }
 public static String Sejour(String CPS) throws SQLException {
 
