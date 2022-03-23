@@ -212,7 +212,6 @@ public class RechercheExamen extends javax.swing.JFrame {
             Logger.getLogger(AjouterPatient.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
         AfficheExamen appel = new AfficheExamen(s,p);  //pour passer à la fenêtre afficheExamen
 
         //on récupère la taille de l'écran
