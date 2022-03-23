@@ -5,6 +5,7 @@
 package Interface;
 
 import NoyauFonctionnel.Acces;
+import static NoyauFonctionnel.Acces.Sejour;
 import NoyauFonctionnel.Date;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -154,10 +155,19 @@ public class ConnexionInterface extends javax.swing.JFrame {
         String login = jTextField1.getText();
         String mdp = jPasswordField1.getText();
         Session current = new Session(login,mdp);
+        
         try {
             Acces.Identification(login,mdp);
-            Affiche_Patients appel = new Affiche_Patients(current);  //pour passer à la fenêtre Affiche_Patients (valider)
-
+                      
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+        try {
+            if (Acces.Identification(login,mdp)!= null){
+                Affiche_Patients appel = new Affiche_Patients(current);  //pour passer à la fenêtre Affiche_Patients (valider)
+                
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
 
@@ -167,20 +177,19 @@ public class ConnexionInterface extends javax.swing.JFrame {
                 appel.setVisible(true);
                 appel.setLocationRelativeTo(null);
                 dispose();
-            
-            
+
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
              
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      /**  if (date.dateDuJour().toString().equals(date)){
-                droitDeCreation=false;
-                System.out.println("message"); //pour les tests à enlever après
-                Affiche_Patients appel = new Affiche_Patients(current);  //pour passer à la fenêtre Affiche_Patients (valider)
+        try {
+            if (date.dateDuJour().toString().equals(Sejour(jTextField1.getText()))){
+                Session sesjour = new Session(jTextField1.getText(),"macarel");
+                Affiche_Patients appel = new Affiche_Patients(sesjour);  //pour passer à la fenêtre Affiche_Patients (valider)
 
                 //on récupère la taille de l'écran
                 Dimension tailleEcran = Toolkit.getDefaultToolkit().getScreenSize();
@@ -195,7 +204,10 @@ public class ConnexionInterface extends javax.swing.JFrame {
             else {
                 System.out.println("ERREUR : date de visite non conforme.");
             }
-      **/
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnexionInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
     }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
