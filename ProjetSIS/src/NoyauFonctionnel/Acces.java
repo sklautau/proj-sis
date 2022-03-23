@@ -15,6 +15,8 @@ public class Acces {
     
 private static final String tablepat = "PATIENT";
 private static final String tableexam = "EXAMEN";
+private static final String tablesejour = "SEJOUR";
+private static final String tablemedecin = "MEDECIN";
 private static final String adresseBD = "jdbc:mysql://localhost:3306/sir";
 
 public static void Identification(String utilisateur,String motDePasse) throws SQLException {
@@ -44,7 +46,7 @@ requeteType.close();
 
 public static String LecturePatient(String nom,String prenom,String datenais, Session s) throws SQLException {
 
-            RequeteType requeteType = new RequeteType();
+            RequeteType requeteType = new RequeteType(s);
             String query = "SELECT * FROM " + tablepat + " where nom = '" + nom +"'AND prenom = '"+prenom+"'";//AND datenais ='"+datenais+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
@@ -67,7 +69,7 @@ public static String LecturePatient(String nom,String prenom,String datenais, Se
 }
 
 public static void AjoutExamen(Examen examen, Session s) throws SQLException {
-RequeteType requeteType = new RequeteType();
+RequeteType requeteType = new RequeteType(s);
 
 String update ="dicom,dateexam,ph,type,cr,pacs";
 PreparedStatement prepupdate = requeteType.insert(tableexam, update);
@@ -82,7 +84,7 @@ requeteType.close();
 }
 
 public static void LectureExamen(String type,String dateexam, Session s) throws SQLException {
-RequeteType requeteType = new RequeteType();
+RequeteType requeteType = new RequeteType(s);
             String query = "SELECT * FROM " + tableexam + " where type = '" + type + "'" + "AND dateexam ='"+dateexam+"'";
             System.out.println(query);
             ResultSet resultat = requeteType.select(query);
@@ -104,7 +106,28 @@ RequeteType requeteType = new RequeteType();
             requeteType.close();
             e.toString();
 }
+public static String Sejour(String CPS, Session s) throws SQLException {
 
+            RequeteType requeteType = new RequeteType(s);
+            String query = "SELECT * FROM " + tablesejour + " where idsej = '" + CPS +"'"; //AND datenais ='"+datenais+"'";
+            System.out.println(query);
+            ResultSet resultat = requeteType.select(query);
+            System.out.println("test");
+            Patient p = null;
+            while (resultat.next()) {
+                
+                String date = resultat.getString(2);
+                
+  
+                //Date date=toDate(datenais);
+               // DICOM idp = new DICOM(""+id);
+               // p = new Patient(idp, nom, prenom, date, adresse);
+               // System.out.println(p);
+            }
+            requeteType.close();
+            return p.toString();
+
+}
 public static Date toDate(String x){
         String[] parts =x.split("/");
         String part1 = parts[0];
